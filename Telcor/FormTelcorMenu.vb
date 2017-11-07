@@ -4,14 +4,29 @@ Public Class FormTelcorMenu
     Private Sub LoadFileDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadFileDataToolStripMenuItem.Click
         'Read Customers file.  If not found, display prompt to load data from a function within application
 
-        'surround with exceptions
-        Dim fileReader As System.IO.StreamReader
-        fileReader =
-        My.Computer.FileSystem.OpenTextFileReader("customers.txt")
-        Dim stringReader As String
-        stringReader = fileReader.ReadLine()
-        MsgBox("The first line of the file is " & stringReader)
+        'surround with exceptions 
+        Dim cf As String
+        Dim dir As String
 
+        cf = "customers.txt"
+        dir = Application.StartupPath & "\" & cf
+
+        Dim textIn As New StreamReader(
+            New FileStream(
+           Dir, FileMode.OpenOrCreate, FileAccess.Read))
+
+        Dim customers As New List(Of Customer)
+
+        Do While textIn.Peek <> -1
+            Dim row As String = textIn.ReadLine
+            Dim columns() As String = row.Split(CChar(","))
+            Dim customer As New Customer
+            customer.GetSetCallerID = columns(0)
+            customer.GetSetCustomerName = columns(1)
+            customers.Add(customer)
+        Loop
+        textIn.Close()
+        dgvCustomers.DataSource = customers
 
     End Sub
 
@@ -43,4 +58,5 @@ Public Class FormTelcorMenu
     Private Sub SaveFileDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveFileDataToolStripMenuItem.Click
         'Save current customer details to the customers text file, orverwriting previous contents.  Write calls to another text file called calls.txt
     End Sub
+
 End Class

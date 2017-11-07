@@ -1,11 +1,16 @@
 ﻿Public Class Customer
     Dim callerID As String
     Dim customerName As String
-    Dim callcount  'As TTCall List
+    Dim callCount  'As TTCall List
     Dim calls As Integer
 
-    Public Sub New(ByVal callerID As String, ByVal custName As String)
+    Public Sub New()
 
+    End Sub
+
+    Public Sub New(ByVal c_callerID As String, ByVal c_custName As String)
+        callerID = c_callerID
+        customerName = c_custName
     End Sub
 
     Public Overrides Function ToString() As String
@@ -18,6 +23,43 @@
         Return ""
     End Function
 
+#Region "Get Sets"
+    Public Property GetSetCalls() As Integer
+        Get
+            Return calls
+        End Get
+        Set(value As Integer)
+            calls = value
+        End Set
+    End Property
+
+    Public Property GetSetCallerID() As String
+        Get
+            Return callerID
+        End Get
+        Set(value As String)
+            callerID = value
+        End Set
+    End Property
+
+    Public Property GetSetCustomerName() As String
+        Get
+            Return customerName
+        End Get
+        Set(value As String)
+            customerName = value
+        End Set
+    End Property
+
+    Public Property GetSetCallCount As Integer
+        Get
+            Return callCount
+        End Get
+        Set(value As Integer)
+            callCount = value
+        End Set
+    End Property
+#End Region
 
 
 End Class

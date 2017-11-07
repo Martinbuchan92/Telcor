@@ -37,7 +37,9 @@ Partial Class FormTelcorMenu
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ResultBlock = New System.Windows.Forms.TextBox()
+        Me.dgvCustomers = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.dgvCustomers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -139,11 +141,20 @@ Partial Class FormTelcorMenu
         Me.ResultBlock.Size = New System.Drawing.Size(584, 31)
         Me.ResultBlock.TabIndex = 1
         '
+        'dgvCustomers
+        '
+        Me.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCustomers.Location = New System.Drawing.Point(89, 254)
+        Me.dgvCustomers.Name = "dgvCustomers"
+        Me.dgvCustomers.Size = New System.Drawing.Size(655, 380)
+        Me.dgvCustomers.TabIndex = 2
+        '
         'FormTelcorMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(836, 709)
+        Me.Controls.Add(Me.dgvCustomers)
         Me.Controls.Add(Me.ResultBlock)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -151,6 +162,7 @@ Partial Class FormTelcorMenu
         Me.Text = "Form1"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.dgvCustomers, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -171,4 +183,5 @@ Partial Class FormTelcorMenu
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ResultBlock As TextBox
+    Friend WithEvents dgvCustomers As DataGridView
 End Class

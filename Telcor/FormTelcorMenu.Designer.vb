@@ -36,10 +36,7 @@ Partial Class FormTelcorMenu
         Me.CalculateCallCostToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ResultBlock = New System.Windows.Forms.TextBox()
-        Me.dgvCustomers = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.dgvCustomers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -48,7 +45,8 @@ Partial Class FormTelcorMenu
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.CustomersToolStripMenuItem, Me.CallsToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(836, 40)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(3, 1, 0, 1)
+        Me.MenuStrip1.Size = New System.Drawing.Size(447, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -56,113 +54,96 @@ Partial Class FormTelcorMenu
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadFileDataToolStripMenuItem, Me.SaveFileDataToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(64, 36)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 22)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'LoadFileDataToolStripMenuItem
         '
         Me.LoadFileDataToolStripMenuItem.Name = "LoadFileDataToolStripMenuItem"
-        Me.LoadFileDataToolStripMenuItem.Size = New System.Drawing.Size(265, 38)
+        Me.LoadFileDataToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
         Me.LoadFileDataToolStripMenuItem.Text = "Load File Data"
         '
         'SaveFileDataToolStripMenuItem
         '
         Me.SaveFileDataToolStripMenuItem.Name = "SaveFileDataToolStripMenuItem"
-        Me.SaveFileDataToolStripMenuItem.Size = New System.Drawing.Size(265, 38)
+        Me.SaveFileDataToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
         Me.SaveFileDataToolStripMenuItem.Text = "Save File Data"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(265, 38)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'CustomersToolStripMenuItem
         '
         Me.CustomersToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddCustomersToolStripMenuItem, Me.DisplayCustomersAndSortToolStripMenuItem, Me.ViewCustomersCallsToolStripMenuItem})
         Me.CustomersToolStripMenuItem.Name = "CustomersToolStripMenuItem"
-        Me.CustomersToolStripMenuItem.Size = New System.Drawing.Size(140, 36)
+        Me.CustomersToolStripMenuItem.Size = New System.Drawing.Size(76, 22)
         Me.CustomersToolStripMenuItem.Text = "Customers"
         '
         'AddCustomersToolStripMenuItem
         '
         Me.AddCustomersToolStripMenuItem.Name = "AddCustomersToolStripMenuItem"
-        Me.AddCustomersToolStripMenuItem.Size = New System.Drawing.Size(408, 38)
+        Me.AddCustomersToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
         Me.AddCustomersToolStripMenuItem.Text = "Add Customers"
         '
         'DisplayCustomersAndSortToolStripMenuItem
         '
         Me.DisplayCustomersAndSortToolStripMenuItem.Name = "DisplayCustomersAndSortToolStripMenuItem"
-        Me.DisplayCustomersAndSortToolStripMenuItem.Size = New System.Drawing.Size(408, 38)
+        Me.DisplayCustomersAndSortToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
         Me.DisplayCustomersAndSortToolStripMenuItem.Text = "Display Customers and Sort"
         '
         'ViewCustomersCallsToolStripMenuItem
         '
         Me.ViewCustomersCallsToolStripMenuItem.Name = "ViewCustomersCallsToolStripMenuItem"
-        Me.ViewCustomersCallsToolStripMenuItem.Size = New System.Drawing.Size(408, 38)
+        Me.ViewCustomersCallsToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
         Me.ViewCustomersCallsToolStripMenuItem.Text = "View Customers' Calls"
         '
         'CallsToolStripMenuItem
         '
         Me.CallsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EnterCallsToolStripMenuItem, Me.CalculateCallCostToolStripMenuItem})
         Me.CallsToolStripMenuItem.Name = "CallsToolStripMenuItem"
-        Me.CallsToolStripMenuItem.Size = New System.Drawing.Size(76, 36)
+        Me.CallsToolStripMenuItem.Size = New System.Drawing.Size(44, 22)
         Me.CallsToolStripMenuItem.Text = "Calls"
         '
         'EnterCallsToolStripMenuItem
         '
         Me.EnterCallsToolStripMenuItem.Name = "EnterCallsToolStripMenuItem"
-        Me.EnterCallsToolStripMenuItem.Size = New System.Drawing.Size(311, 38)
+        Me.EnterCallsToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.EnterCallsToolStripMenuItem.Text = "Enter Calls"
         '
         'CalculateCallCostToolStripMenuItem
         '
         Me.CalculateCallCostToolStripMenuItem.Name = "CalculateCallCostToolStripMenuItem"
-        Me.CalculateCallCostToolStripMenuItem.Size = New System.Drawing.Size(311, 38)
+        Me.CalculateCallCostToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.CalculateCallCostToolStripMenuItem.Text = "Calculate Call Cost"
         '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(77, 36)
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 22)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(179, 38)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem.Text = "About"
-        '
-        'ResultBlock
-        '
-        Me.ResultBlock.Location = New System.Drawing.Point(12, 126)
-        Me.ResultBlock.Name = "ResultBlock"
-        Me.ResultBlock.Size = New System.Drawing.Size(584, 31)
-        Me.ResultBlock.TabIndex = 1
-        '
-        'dgvCustomers
-        '
-        Me.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCustomers.Location = New System.Drawing.Point(89, 254)
-        Me.dgvCustomers.Name = "dgvCustomers"
-        Me.dgvCustomers.Size = New System.Drawing.Size(655, 380)
-        Me.dgvCustomers.TabIndex = 2
         '
         'FormTelcorMenu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(836, 709)
-        Me.Controls.Add(Me.dgvCustomers)
-        Me.Controls.Add(Me.ResultBlock)
+        Me.ClientSize = New System.Drawing.Size(447, 332)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "FormTelcorMenu"
-        Me.Text = "Form1"
+        Me.Text = "Telcor"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.dgvCustomers, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -182,6 +163,4 @@ Partial Class FormTelcorMenu
     Friend WithEvents CalculateCallCostToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ResultBlock As TextBox
-    Friend WithEvents dgvCustomers As DataGridView
 End Class

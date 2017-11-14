@@ -5,19 +5,15 @@
         NAT_CALL
         ISD_CALL
         MOBILE_CALL
+        DEFAULT_CALL
     End Enum
 
-    'call description array
     Dim callID As Integer
     Dim thisCallType As CallType
     Dim duration As Integer
     Dim numberCalled As String
     ReadOnly Cost As Double
     Shared nextCallID As Integer = 1
-
-    Public Sub New()
-
-    End Sub
 
     Public Sub New(ByVal ct As CallType, ByVal c_duration As Integer, ByVal c_numberCalled As String)
         thisCallType = ct
@@ -50,11 +46,13 @@
 
     Public Shared Function Format(ByVal seconds As Integer, ByVal pattern As Integer) As String
         Dim formattedTime As String
+        Dim span As TimeSpan = TimeSpan.FromSeconds(seconds)
+        Dim myTime As DateTime = New DateTime(span.Ticks)
 
         If pattern = 0 Then
-            formattedTime = String.Format("mm:ss", seconds)
+            formattedTime = myTime.ToString(("mm:ss"))
         ElseIf pattern = 1 Then
-            formattedTime = String.Format("{mm} minute(s) and {ss} second(s)", seconds)
+            formattedTime = String.Format("{0} Minute(s) and {1} Second(s)", myTime.ToString("mm"), myTime.ToString("ss"))
         Else
             formattedTime = "null"
         End If
@@ -63,26 +61,35 @@
     End Function
 
     Public Overrides Function ToString() As String
-
-        Return ""
+        Dim objectData = String.Format("{0}, {1}, {2}, {3}, {4}", numberCalled, thisCallType, Format(duration, 0), Cost)
+        Return objectData
     End Function
 
 #Region "Get Sets"
-    Public Property GetSetCallID() As Integer
+    Public ReadOnly Property GetSetCallID() As Integer
         Get
             Return callID
         End Get
-        Set(value As Integer)
-            callID = value
-        End Set
+
     End Property
 
     Public Property GetSetCallType() As CallType
         Get
             Return thisCallType
         End Get
-        Set(value As CallType)
-            thisCallType = value
+        Set(ByVal value As CallType)
+            Dim ctArray As Array
+            ctArray = System.Enum.GetValues(GetType(CallType))
+
+            Dim item As CallType
+            For Each item In ctArray
+                If value = item Then
+                    thisCallType = item
+                Else
+                    thisCallType = CallType.DEFAULT_CALL
+                End If
+            Next
+
         End Set
     End Property
 

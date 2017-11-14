@@ -76,6 +76,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="FormDisplayAndSort.Designer.vb">
+      <DependentUpon>FormDisplayAndSort.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormDisplayAndSort.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddCustomer.Designer.vb">
+      <DependentUpon>FormAddCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TTCall.vb" />
     <Compile Include="Customer.vb" />
     <Compile Include="FormTelcorMenu.vb">
@@ -103,6 +115,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormDisplayAndSort.resx">
+      <DependentUpon>FormDisplayAndSort.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddCustomer.resx">
+      <DependentUpon>FormAddCustomer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTelcorMenu.resx">
       <DependentUpon>FormTelcorMenu.vb</DependentUpon>
     </EmbeddedResource>

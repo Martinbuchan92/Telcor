@@ -1,41 +1,51 @@
 ﻿Imports System.IO
 
 Public Class FormTelcorMenu
+    Public customers As New List(Of Customer)
+
     Private Sub LoadFileDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadFileDataToolStripMenuItem.Click
         'Read Customers file.  If not found, display prompt to load data from a function within application
 
-        'surround with exceptions 
-        Dim cf As String
-        Dim dir As String
+        Try
+            Dim cf As String
+            Dim dir As String
 
-        cf = "customers.txt"
-        dir = Application.StartupPath & "\" & cf
+            cf = "customers.txt"
+            dir = Application.StartupPath & "\" & cf
 
-        Dim textIn As New StreamReader(
+            Dim textIn As New StreamReader(
             New FileStream(
-           Dir, FileMode.OpenOrCreate, FileAccess.Read))
+           dir, FileMode.OpenOrCreate, FileAccess.Read))
 
-        Dim customers As New List(Of Customer)
 
-        Do While textIn.Peek <> -1
-            Dim row As String = textIn.ReadLine
-            Dim columns() As String = row.Split(CChar(","))
-            Dim customer As New Customer
-            customer.GetSetCallerID = columns(0)
-            customer.GetSetCustomerName = columns(1)
-            customers.Add(customer)
-        Loop
-        textIn.Close()
-        dgvCustomers.DataSource = customers
+            Do While textIn.Peek <> -1
+                Dim row As String = textIn.ReadLine
+                Dim columns() As String = row.Split(CChar(","))
+                Dim customer As New Customer With {
+                .GetSetCallerID = columns(0),
+                .GetSetCustomerName = columns(1)
+            }
+                customers.Add(customer)
+            Loop
+            textIn.Close()
+        Catch ex As IOException
+        End Try
 
     End Sub
 
     Private Sub AddCustomersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddCustomersToolStripMenuItem.Click
+        FormAddCustomer.Show()
+
+
         'Show form that allows entry of customers details and add the new customer to the customer list.
         'Allows continuous entry of new customers. a New button that clears controls for next customer and close button to return to main menu.
     End Sub
 
     Private Sub DisplayCustomersAndSortToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DisplayCustomersAndSortToolStripMenuItem.Click
+        FormDisplayAndSort.Show()
+
+
+
         'Display a form that will prompt the user for sorting of customers by name or phone number.  Allow for repeated sorts.
         'Will need to implement one or more interfaces.
     End Sub
@@ -59,4 +69,7 @@ Public Class FormTelcorMenu
         'Save current customer details to the customers text file, orverwriting previous contents.  Write calls to another text file called calls.txt
     End Sub
 
+    Private Sub FormTelcorMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

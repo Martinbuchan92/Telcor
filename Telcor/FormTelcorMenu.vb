@@ -17,7 +17,7 @@ Public Class FormTelcorMenu
             New FileStream(
            dir, FileMode.OpenOrCreate, FileAccess.Read))
 
-
+            'change to constructor
             Do While textIn.Peek <> -1
                 Dim row As String = textIn.ReadLine
                 Dim columns() As String = row.Split(CChar(","))
@@ -35,10 +35,6 @@ Public Class FormTelcorMenu
 
     Private Sub AddCustomersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddCustomersToolStripMenuItem.Click
         FormAddCustomer.Show()
-
-
-        'Show form that allows entry of customers details and add the new customer to the customer list.
-        'Allows continuous entry of new customers. a New button that clears controls for next customer and close button to return to main menu.
     End Sub
 
     Private Sub DisplayCustomersAndSortToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DisplayCustomersAndSortToolStripMenuItem.Click
@@ -51,6 +47,7 @@ Public Class FormTelcorMenu
     End Sub
 
     Private Sub EnterCallsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EnterCallsToolStripMenuItem.Click
+        FormEnterCalls.Show()
         'Display form that allows entry of one or more calls for a Customer.  Add controls to select a customer (print list into a combo)
         'Allow for the continous entry of new calls. Each call entered by the user is to become a TTCall object in a list of TTCall objets
         'in the customer class.

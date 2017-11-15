@@ -1,4 +1,4 @@
-﻿Module Main
+﻿Module Telcor
     Sub Main()
 
         Application.Run(FormTelcorMenu)

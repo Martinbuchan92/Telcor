@@ -2,10 +2,10 @@
     Dim callerID As String
     Dim customerName As String
     Dim callCount As Integer
-    Dim calls() As TTCall
+    Dim calls() As TTCall 'change to List
 
     Public Sub New()
-
+        'get rid of this
     End Sub
 
     Public Sub New(ByVal c_callerID As String, ByVal c_custName As String)
@@ -20,7 +20,7 @@
 
     Public Shared Function Format(ByVal customers As List(Of Customer), ByVal withCallData As Boolean, ByVal zeroCalls As Boolean) As String
         Dim returnData As String = ""
-
+        'Remove duplicate code/siplify 
         If withCallData And zeroCalls Then
             For Each person In customers
                 returnData += person.ToString
@@ -64,7 +64,7 @@
     Public Shared Function FindCustomer(ByVal customers As List(Of Customer), ByVal search As String, ByVal byName As Boolean) As String
         Dim printDetails As String
         'TODO Fix Duplicate code 
-
+        'add boolean flag for if not found
         If byName = True Then
             For Each person In customers
                 If person.GetSetCustomerName.Equals(search) Then
@@ -75,7 +75,7 @@
                     Next
                 End If
             Next
-        ElseIf byName = False Then
+        Else
             For Each person In customers
                 If person.GetSetCallerID.Equals(search) Then
                     printDetails = person.ToString()
@@ -85,8 +85,6 @@
                     Next
                 End If
             Next
-        Else
-            Return "Customer not found"
         End If
 
         Return ""

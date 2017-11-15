@@ -19,12 +19,13 @@
         thisCallType = ct
         duration = c_duration
         numberCalled = c_numberCalled
-        callID = nextCallID
+        callID = nextCallID ' get next call ID
         nextCallID += 1
         Cost = CalculateCost(thisCallType, duration)
     End Sub
 
     Public Shared Function CalculateCost(ByVal ct As CallType, ByVal duration As Integer) As Decimal
+        'Make Constants
         Dim LOCAL_RATE = 0.001
         Dim NAT_RATE = 0.009
         Dim ISD_RATE = 0.015

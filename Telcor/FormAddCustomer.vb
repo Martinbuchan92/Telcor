@@ -1,7 +1,8 @@
 ﻿Public Class FormAddCustomer
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If txtName.TextLength > 0 And txtPhoneNumber.TextLength > 0 Then
-            Dim customer As New Customer(txtPhoneNumber.ToString, txtName.ToString)
+            Dim customer As New Customer(txtPhoneNumber.Text, txtName.Text)
+            FormTelcorMenu.customers.Add(customer)
         End If
         btnClear.PerformClick()
 

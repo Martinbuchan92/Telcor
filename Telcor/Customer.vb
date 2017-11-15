@@ -67,7 +67,7 @@
         'add boolean flag for if not found
         If byName = True Then
             For Each person In customers
-                If person.GetSetCustomerName.Equals(search) Then
+                If person.CustName.Equals(search) Then
                     printDetails = person.ToString()
                     For Each item In person.calls
                         printDetails += item.ToString
@@ -77,7 +77,7 @@
             Next
         Else
             For Each person In customers
-                If person.GetSetCallerID.Equals(search) Then
+                If person.CustCallerID.Equals(search) Then
                     printDetails = person.ToString()
                     For Each item In person.calls
                         printDetails += item.ToString
@@ -91,7 +91,7 @@
     End Function
 
 #Region "Get Sets"
-    Public Property GetSetCalls() As TTCall()
+    Public Property TelcorCall() As TTCall()
         Get
             Return calls
         End Get
@@ -100,7 +100,7 @@
         End Set
     End Property
 
-    Public Property GetSetCallerID() As String
+    Public Property CustCallerID() As String
         Get
             Return callerID
         End Get
@@ -109,7 +109,7 @@
         End Set
     End Property
 
-    Public Property GetSetCustomerName() As String
+    Public Property CustName() As String
         Get
             Return customerName
         End Get
@@ -118,7 +118,7 @@
         End Set
     End Property
 
-    Public Property GetSetCallCount As Integer
+    Public Property CustCallCount() As Integer
         Get
             Return callCount
         End Get

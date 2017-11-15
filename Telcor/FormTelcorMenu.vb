@@ -1,35 +1,10 @@
 ﻿Imports System.IO
 
 Public Class FormTelcorMenu
-    Public customers As New List(Of Customer)
 
     Private Sub LoadFileDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadFileDataToolStripMenuItem.Click
         'Read Customers file.  If not found, display prompt to load data from a function within application
-
-        Try
-            Dim cf As String
-            Dim dir As String
-
-            cf = "customers.txt"
-            dir = Application.StartupPath & "\" & cf
-
-            Dim textIn As New StreamReader(
-            New FileStream(
-           dir, FileMode.OpenOrCreate, FileAccess.Read))
-
-            'change to constructor
-            Do While textIn.Peek <> -1
-                Dim row As String = textIn.ReadLine
-                Dim columns() As String = row.Split(CChar(","))
-                Dim customer As New Customer With {
-                .GetSetCallerID = columns(0),
-                .GetSetCustomerName = columns(1)
-            }
-                customers.Add(customer)
-            Loop
-            textIn.Close()
-        Catch ex As IOException
-        End Try
+        Telcor.loadFileData()
 
     End Sub
 

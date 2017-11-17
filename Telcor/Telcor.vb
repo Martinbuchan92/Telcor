@@ -9,13 +9,12 @@ Module Telcor
 
     End Sub
 
-    Sub showMenu()
+    Sub ShowMenu()
 
     End Sub
 
-    Sub loadFileData()
+    Sub LoadFileData()
         'Read Customers file.  If not found, display prompt to load data from a function within application
-
         Try
             Dim cf As String
             Dim dir As String
@@ -31,10 +30,7 @@ Module Telcor
             Do While textIn.Peek <> -1
                 Dim row As String = textIn.ReadLine
                 Dim columns() As String = row.Split(CChar(","))
-                Dim customer As New Customer With {
-                .CustCallerID = columns(0),
-                .CustName = columns(1)
-            }
+                Dim customer As New Customer(columns(0), columns(1))
                 customers.Add(customer)
             Loop
             textIn.Close()

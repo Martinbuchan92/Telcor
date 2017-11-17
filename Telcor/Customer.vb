@@ -4,10 +4,6 @@
     Dim callCount As Integer
     Dim calls() As TTCall 'change to List
 
-    Public Sub New()
-        'get rid of this
-    End Sub
-
     Public Sub New(ByVal c_callerID As String, ByVal c_custName As String)
         callerID = c_callerID
         customerName = c_custName

@@ -1,10 +1,20 @@
 ﻿Public Class FormEnterCalls
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-        'If txtName.TextLength > 0 And txtPhoneNumber.TextLength > 0 Then
-        '    Dim customer As New Customer(txtPhoneNumber.Text, txtName.Text)
-        '    FormTelcorMenu.customers.Add(customer)
-        'End If
-        'btnClear.PerformClick()
 
+        'CmbCustomer.SelectedItem
+
+        BtnClear.PerformClick()
+
+    End Sub
+
+    Private Sub FormEnterCalls_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        For Each person In Telcor.customers
+            CmbCustomer.Items.Add(person.CustName)
+        Next
+
+    End Sub
+
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
+        Me.Close()
     End Sub
 End Class

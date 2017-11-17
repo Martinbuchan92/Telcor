@@ -76,6 +76,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="FormCallCost.Designer.vb">
+      <DependentUpon>FormCallCost.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCallCost.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormDisplayAndSort.Designer.vb">
       <DependentUpon>FormDisplayAndSort.vb</DependentUpon>
     </Compile>
@@ -92,6 +98,12 @@
       <DependentUpon>FormEnterCalls.vb</DependentUpon>
     </Compile>
     <Compile Include="FormEnterCalls.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewCustomersCalls.Designer.vb">
+      <DependentUpon>FormViewCustomersCalls.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewCustomersCalls.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TTCall.vb" />
@@ -121,6 +133,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormCallCost.resx">
+      <DependentUpon>FormCallCost.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDisplayAndSort.resx">
       <DependentUpon>FormDisplayAndSort.vb</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTelcorMenu.resx">
       <DependentUpon>FormTelcorMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewCustomersCalls.resx">
+      <DependentUpon>FormViewCustomersCalls.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

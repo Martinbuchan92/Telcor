@@ -13,6 +13,10 @@ Module Telcor
 
     End Sub
 
+    Public Sub BubbleSort(ByVal dataset() As Customer, ByVal n As Integer)
+
+    End Sub
+
     Sub LoadFileData()
         'Read Customers file.  If not found, display prompt to load data from a function within application
         Try
@@ -36,6 +40,10 @@ Module Telcor
             textIn.Close()
         Catch ex As IOException
         End Try
+
+    End Sub
+
+    Sub SaveFileData()
 
     End Sub
 End Module

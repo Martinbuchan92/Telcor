@@ -5,7 +5,6 @@ Public Class FormTelcorMenu
     Private Sub LoadFileDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadFileDataToolStripMenuItem.Click
         'Read Customers file.  If not found, display prompt to load data from a function within application
         Telcor.LoadFileData()
-
     End Sub
 
     Private Sub AddCustomersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddCustomersToolStripMenuItem.Click
@@ -37,6 +36,7 @@ Public Class FormTelcorMenu
     End Sub
 
     Private Sub SaveFileDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveFileDataToolStripMenuItem.Click
+        Telcor.SaveFileData()
         'Save current customer details to the customers text file, orverwriting previous contents.  Write calls to another text file called calls.txt
     End Sub
 

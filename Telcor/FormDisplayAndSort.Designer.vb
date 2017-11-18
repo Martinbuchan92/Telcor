@@ -31,8 +31,8 @@ Partial Class FormDisplayAndSort
         '
         'btnSortName
         '
-        Me.btnSortName.Location = New System.Drawing.Point(24, 629)
-        Me.btnSortName.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.btnSortName.Location = New System.Drawing.Point(18, 541)
+        Me.btnSortName.Margin = New System.Windows.Forms.Padding(6)
         Me.btnSortName.Name = "btnSortName"
         Me.btnSortName.Size = New System.Drawing.Size(150, 44)
         Me.btnSortName.TabIndex = 1
@@ -41,8 +41,8 @@ Partial Class FormDisplayAndSort
         '
         'btnSortNumber
         '
-        Me.btnSortNumber.Location = New System.Drawing.Point(186, 629)
-        Me.btnSortNumber.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.btnSortNumber.Location = New System.Drawing.Point(180, 541)
+        Me.btnSortNumber.Margin = New System.Windows.Forms.Padding(6)
         Me.btnSortNumber.Name = "btnSortNumber"
         Me.btnSortNumber.Size = New System.Drawing.Size(150, 44)
         Me.btnSortNumber.TabIndex = 2
@@ -51,8 +51,8 @@ Partial Class FormDisplayAndSort
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(790, 629)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.btnClose.Location = New System.Drawing.Point(784, 541)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(6)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(150, 44)
         Me.btnClose.TabIndex = 3
@@ -62,7 +62,7 @@ Partial Class FormDisplayAndSort
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(24, 598)
+        Me.Label1.Location = New System.Drawing.Point(18, 510)
         Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(86, 25)
@@ -82,13 +82,13 @@ Partial Class FormDisplayAndSort
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(964, 696)
+        Me.ClientSize = New System.Drawing.Size(964, 612)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnSortNumber)
         Me.Controls.Add(Me.btnSortName)
-        Me.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.Margin = New System.Windows.Forms.Padding(6)
         Me.Name = "FormDisplayAndSort"
         Me.Text = "Display Customers and Sort"
         Me.ResumeLayout(False)

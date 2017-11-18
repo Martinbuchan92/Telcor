@@ -2,7 +2,7 @@
     Dim callerID As String
     Dim customerName As String
     Dim callCount As Integer
-    Dim calls() As TTCall 'change to List
+    Dim calls As New List(Of TTCall)
 
     Public Sub New(ByVal c_callerID As String, ByVal c_custName As String)
         callerID = c_callerID
@@ -58,40 +58,42 @@
     End Function
 
     Public Shared Function FindCustomer(ByVal customers As List(Of Customer), ByVal search As String, ByVal byName As Boolean) As String
-        Dim printDetails As String
+        Dim details As String
         'TODO Fix Duplicate code 
         'add boolean flag for if not found
         If byName = True Then
             For Each person In customers
                 If person.CustName.Equals(search) Then
-                    printDetails = person.ToString()
-                    For Each item In person.calls
-                        printDetails += item.ToString
-                        printDetails += Environment.NewLine
-                    Next
+                    details = PrintDetails(person)
                 End If
             Next
         Else
             For Each person In customers
                 If person.CustCallerID.Equals(search) Then
-                    printDetails = person.ToString()
-                    For Each item In person.calls
-                        printDetails += item.ToString
-                        printDetails += Environment.NewLine
-                    Next
+                    details = PrintDetails(person)
                 End If
             Next
         End If
 
-        Return ""
+        Return details
+    End Function
+
+    Private Shared Function PrintDetails(person As Customer) As String
+        Dim callDetails As String = ""
+        callDetails = person.ToString()
+        For Each item In person.calls
+            callDetails += item.ToString
+            callDetails += Environment.NewLine
+        Next
+        Return callDetails
     End Function
 
 #Region "Get Sets"
-    Public Property TelcorCall() As TTCall()
+    Public Property TelcorCall() As List(Of TTCall)
         Get
             Return calls
         End Get
-        Set(value As TTCall())
+        Set(ByVal value As List(Of TTCall))
             calls = value
         End Set
     End Property

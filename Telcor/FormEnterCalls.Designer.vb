@@ -40,114 +40,117 @@ Partial Class FormEnterCalls
         '
         Me.CmbCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbCustomer.FormattingEnabled = True
-        Me.CmbCustomer.Location = New System.Drawing.Point(22, 46)
-        Me.CmbCustomer.Margin = New System.Windows.Forms.Padding(4)
+        Me.CmbCustomer.Location = New System.Drawing.Point(11, 24)
+        Me.CmbCustomer.Margin = New System.Windows.Forms.Padding(2)
         Me.CmbCustomer.Name = "CmbCustomer"
-        Me.CmbCustomer.Size = New System.Drawing.Size(332, 33)
+        Me.CmbCustomer.Size = New System.Drawing.Size(168, 21)
         Me.CmbCustomer.TabIndex = 0
         '
         'CmbCallType
         '
         Me.CmbCallType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbCallType.FormattingEnabled = True
-        Me.CmbCallType.Location = New System.Drawing.Point(22, 119)
-        Me.CmbCallType.Margin = New System.Windows.Forms.Padding(4)
+        Me.CmbCallType.Location = New System.Drawing.Point(11, 78)
+        Me.CmbCallType.Margin = New System.Windows.Forms.Padding(2)
         Me.CmbCallType.Name = "CmbCallType"
-        Me.CmbCallType.Size = New System.Drawing.Size(332, 33)
+        Me.CmbCallType.Size = New System.Drawing.Size(168, 21)
         Me.CmbCallType.TabIndex = 1
         '
         'txtNumberCalled
         '
-        Me.txtNumberCalled.Location = New System.Drawing.Point(22, 263)
-        Me.txtNumberCalled.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNumberCalled.Location = New System.Drawing.Point(11, 184)
+        Me.txtNumberCalled.Margin = New System.Windows.Forms.Padding(2)
         Me.txtNumberCalled.Name = "txtNumberCalled"
-        Me.txtNumberCalled.Size = New System.Drawing.Size(332, 31)
+        Me.txtNumberCalled.Size = New System.Drawing.Size(168, 20)
         Me.txtNumberCalled.TabIndex = 3
         '
         'BtnSave
         '
-        Me.BtnSave.Location = New System.Drawing.Point(126, 440)
-        Me.BtnSave.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnSave.Location = New System.Drawing.Point(50, 235)
+        Me.BtnSave.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.Size = New System.Drawing.Size(94, 40)
+        Me.BtnSave.Size = New System.Drawing.Size(75, 25)
         Me.BtnSave.TabIndex = 4
         Me.BtnSave.Text = "Save"
         Me.BtnSave.UseVisualStyleBackColor = True
         '
         'BtnClear
         '
-        Me.BtnClear.Location = New System.Drawing.Point(246, 438)
-        Me.BtnClear.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnClear.Location = New System.Drawing.Point(129, 235)
+        Me.BtnClear.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnClear.Name = "BtnClear"
-        Me.BtnClear.Size = New System.Drawing.Size(148, 42)
+        Me.BtnClear.Size = New System.Drawing.Size(75, 25)
         Me.BtnClear.TabIndex = 5
         Me.BtnClear.Text = "Clear"
         Me.BtnClear.UseVisualStyleBackColor = True
         '
         'BtnClose
         '
-        Me.BtnClose.Location = New System.Drawing.Point(424, 440)
-        Me.BtnClose.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.BtnClose.Location = New System.Drawing.Point(208, 235)
+        Me.BtnClose.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnClose.Name = "BtnClose"
-        Me.BtnClose.Size = New System.Drawing.Size(128, 40)
+        Me.BtnClose.Size = New System.Drawing.Size(75, 25)
         Me.BtnClose.TabIndex = 6
         Me.BtnClose.Text = "Close"
         Me.BtnClose.UseVisualStyleBackColor = True
         '
         'NupDuration
         '
-        Me.NupDuration.Location = New System.Drawing.Point(22, 192)
-        Me.NupDuration.Margin = New System.Windows.Forms.Padding(4)
+        Me.NupDuration.Location = New System.Drawing.Point(11, 125)
+        Me.NupDuration.Margin = New System.Windows.Forms.Padding(2)
         Me.NupDuration.Maximum = New Decimal(New Integer() {3600, 0, 0, 0})
         Me.NupDuration.Name = "NupDuration"
-        Me.NupDuration.Size = New System.Drawing.Size(180, 31)
-        Me.NupDuration.TabIndex = 7
+        Me.NupDuration.Size = New System.Drawing.Size(168, 20)
+        Me.NupDuration.TabIndex = 2
         '
         'lblCustomer
         '
         Me.lblCustomer.AutoSize = True
-        Me.lblCustomer.Location = New System.Drawing.Point(22, 17)
-        Me.lblCustomer.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCustomer.Location = New System.Drawing.Point(11, 9)
+        Me.lblCustomer.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCustomer.Name = "lblCustomer"
-        Me.lblCustomer.Size = New System.Drawing.Size(104, 25)
+        Me.lblCustomer.Size = New System.Drawing.Size(51, 13)
         Me.lblCustomer.TabIndex = 8
         Me.lblCustomer.Text = "Customer"
         '
         'LblCallType
         '
         Me.LblCallType.AutoSize = True
-        Me.LblCallType.Location = New System.Drawing.Point(22, 90)
-        Me.LblCallType.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblCallType.Location = New System.Drawing.Point(11, 63)
+        Me.LblCallType.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LblCallType.Name = "LblCallType"
-        Me.LblCallType.Size = New System.Drawing.Size(103, 25)
+        Me.LblCallType.Size = New System.Drawing.Size(51, 13)
         Me.LblCallType.TabIndex = 9
         Me.LblCallType.Text = "Call Type"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(22, 163)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(11, 110)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(197, 25)
+        Me.Label3.Size = New System.Drawing.Size(98, 13)
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "Duration (Seconds)"
         '
         'LblNumberCalled
         '
         Me.LblNumberCalled.AutoSize = True
-        Me.LblNumberCalled.Location = New System.Drawing.Point(22, 235)
-        Me.LblNumberCalled.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblNumberCalled.Location = New System.Drawing.Point(11, 169)
+        Me.LblNumberCalled.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LblNumberCalled.Name = "LblNumberCalled"
-        Me.LblNumberCalled.Size = New System.Drawing.Size(154, 25)
+        Me.LblNumberCalled.Size = New System.Drawing.Size(76, 13)
         Me.LblNumberCalled.TabIndex = 11
         Me.LblNumberCalled.Text = "Number Called"
         '
         'FormEnterCalls
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AcceptButton = Me.BtnSave
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(565, 502)
+        Me.CancelButton = Me.BtnClose
+        Me.ClientSize = New System.Drawing.Size(294, 271)
         Me.Controls.Add(Me.LblNumberCalled)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.LblCallType)
@@ -159,8 +162,9 @@ Partial Class FormEnterCalls
         Me.Controls.Add(Me.txtNumberCalled)
         Me.Controls.Add(Me.CmbCallType)
         Me.Controls.Add(Me.CmbCustomer)
-        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FormEnterCalls"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Enter Calls"
         CType(Me.NupDuration, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -14,52 +14,32 @@ Public Class Customer
     End Sub
 
     Public Overrides Function ToString() As String
-        Dim objectData = String.Format("{0}, {1}", callerID, customerName)
+        Dim objectData = String.Format("{0}, '{1}'", callerID, customerName)
         Return objectData
     End Function
 
     Public Shared Function Format(ByVal customers As List(Of Customer), ByVal withCallData As Boolean, ByVal zeroCalls As Boolean) As String
-        Dim returnData As String = ""
-        'Remove duplicate code/siplify 
-        If withCallData And zeroCalls Then
-            For Each person In customers
-                returnData += person.ToString
-                returnData += Environment.NewLine
-                If person.callCount > 0 Then
-                    For Each phoneCall In person.calls
-                        returnData += phoneCall.ToString
-                        returnData += Environment.NewLine
-                    Next
-                End If
-            Next
-        ElseIf withCallData And Not zeroCalls Then
-            For Each person In customers
-                If person.callCount > 0 Then
-                    returnData += person.ToString
-                    For Each phoneCall In person.calls
-                        returnData += person.calls.ToString
-                        returnData += Environment.NewLine
-                    Next
-                End If
-            Next
-            Return returnData
-        ElseIf Not withCallData And zeroCalls Then
-            For Each person In customers
-                If person.callCount = 0 Then
-                    returnData += person.ToString
-                    returnData += Environment.NewLine
-                End If
-            Next
-        ElseIf Not withCallData And Not zeroCalls Then
-            For Each person In customers
-                If person.callCount > 0 Then
-                    returnData += person.ToString
-                    returnData += Environment.NewLine
-                End If
-            Next
-        End If
+        Dim formatted As String = ""
 
-        Return returnData
+        For Each Person In customers
+            If withCallData And zeroCalls Then
+                formatted += PrintDetails(Person, True)
+            ElseIf withCallData And Not zeroCalls Then
+                If Person.callCount > 0 Then
+                    formatted += PrintDetails(Person, True)
+                End If
+            ElseIf Not withCallData And zeroCalls Then
+                If Person.callCount = 0 Then
+                    formatted += PrintDetails(Person, False)
+                End If
+            ElseIf Not withCallData And Not zeroCalls Then
+                If Person.callCount > 0 Then
+                    formatted += PrintDetails(Person, False)
+                End If
+            End If
+        Next
+
+        Return formatted
     End Function
 
     Public Shared Function FindCustomer(ByVal customers As List(Of Customer), ByVal search As String, ByVal byName As Boolean) As String
@@ -69,12 +49,12 @@ Public Class Customer
             If byName = True Then
                 If person.CustName.Equals(search) Then
                     found = True
-                    details = PrintDetails(person)
+                    details = PrintDetails(person, True)
                 End If
             Else 'searching by ID
                 If person.CustCallerID.Equals(search) Then
                     found = True
-                    details = PrintDetails(person)
+                    details = PrintDetails(person, True)
                 End If
             End If
         Next
@@ -84,14 +64,16 @@ Public Class Customer
         Return "customer not found"
     End Function
 
-    Private Shared Function PrintDetails(person As Customer) As String
+    Public Shared Function PrintDetails(person As Customer, withCalls As Boolean) As String
         Dim callDetails As String = ""
-        callDetails = person.ToString()
+        callDetails += person.ToString()
         callDetails += Environment.NewLine
-        For Each item In person.calls
-            callDetails += item.ToString
-            callDetails += Environment.NewLine
-        Next
+        If withCalls = True Then
+            For Each item In person.calls
+                callDetails += item.ToString
+                callDetails += Environment.NewLine
+            Next
+        End If
         Return callDetails
     End Function
 

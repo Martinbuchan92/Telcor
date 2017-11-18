@@ -64,7 +64,7 @@
     End Function
 
     Public Overrides Function ToString() As String
-        Dim objectData = String.Format("{0}, {1}, {2}, {3}", numberCalled, thisCallType, Format(duration, 0), Cost)
+        Dim objectData = String.Format("{0}, {1}, {2}, {3}", numberCalled, thisCallType, Format(duration, 0), (FormatCurrency(CDbl(Cost), 2)))
         Return objectData
     End Function
 

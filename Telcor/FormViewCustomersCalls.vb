@@ -4,22 +4,30 @@
     End Sub
 
     Private Sub CmbSelectOption_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbSelectOption.SelectedIndexChanged
+        Dim results As String
+        RtbResultsBox.Text = ""
+        'List All
         If CmbSelectOption.SelectedIndex = 0 Then
+            results = Customer.Format(customers, True, True)
+            RtbResultsBox.Text += results
 
-            Dim Test As String = Customer.Format(customers, True, True)
-            RichTextBox1.Text = Test
+            'List all with call details
+        ElseIf CmbSelectOption.SelectedIndex = 1 Then
+            results = Customer.Format(customers, True, False)
+            RtbResultsBox.Text = results
 
+            'List all not contacted
+        ElseIf CmbSelectOption.SelectedIndex = 2 Then
+            results = Customer.Format(customers, False, True)
+            RtbResultsBox.Text = results
+
+            'List all contacted
+        ElseIf CmbSelectOption.SelectedIndex = 3 Then
+            results = Customer.Format(customers, False, False)
+            RtbResultsBox.Text = results
+
+            'Search
         ElseIf CmbSelectOption.SelectedIndex = 4 Then
-            For Each person In customers
-                RichTextBox1.Text += person.ToString
-                RichTextBox1.Text += Environment.NewLine
-                For Each phonecall In person.TelcorCall
-                    RichTextBox1.Text = phonecall.ToString
-                    RichTextBox1.Text += Environment.NewLine
-
-                Next
-            Next
-
             TxtSearchBox.Enabled = True
             RbName.Enabled = True
             RbNumber.Enabled = True
@@ -31,4 +39,12 @@
 
     End Sub
 
+    Private Sub BtnSearch_Click(sender As Object, e As EventArgs) Handles BtnSearch.Click
+
+        If RbName.Checked Then
+            RtbResultsBox.Text = Customer.FindCustomer(customers, TxtSearchBox.Text, True)
+        Else
+            RtbResultsBox.Text = Customer.FindCustomer(customers, TxtSearchBox.Text, False)
+        End If
+    End Sub
 End Class

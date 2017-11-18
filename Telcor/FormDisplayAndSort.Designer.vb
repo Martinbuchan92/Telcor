@@ -31,30 +31,27 @@ Partial Class FormDisplayAndSort
         '
         'BtnSortName
         '
-        Me.BtnSortName.Location = New System.Drawing.Point(18, 541)
-        Me.BtnSortName.Margin = New System.Windows.Forms.Padding(6)
+        Me.BtnSortName.Location = New System.Drawing.Point(12, 274)
         Me.BtnSortName.Name = "BtnSortName"
-        Me.BtnSortName.Size = New System.Drawing.Size(150, 44)
+        Me.BtnSortName.Size = New System.Drawing.Size(75, 25)
         Me.BtnSortName.TabIndex = 1
         Me.BtnSortName.Text = "Name"
         Me.BtnSortName.UseVisualStyleBackColor = True
         '
         'BtnSortNumber
         '
-        Me.BtnSortNumber.Location = New System.Drawing.Point(180, 541)
-        Me.BtnSortNumber.Margin = New System.Windows.Forms.Padding(6)
+        Me.BtnSortNumber.Location = New System.Drawing.Point(93, 274)
         Me.BtnSortNumber.Name = "BtnSortNumber"
-        Me.BtnSortNumber.Size = New System.Drawing.Size(150, 44)
+        Me.BtnSortNumber.Size = New System.Drawing.Size(75, 25)
         Me.BtnSortNumber.TabIndex = 2
         Me.BtnSortNumber.Text = "Number"
         Me.BtnSortNumber.UseVisualStyleBackColor = True
         '
         'BtnClose
         '
-        Me.BtnClose.Location = New System.Drawing.Point(784, 541)
-        Me.BtnClose.Margin = New System.Windows.Forms.Padding(6)
+        Me.BtnClose.Location = New System.Drawing.Point(357, 274)
         Me.BtnClose.Name = "BtnClose"
-        Me.BtnClose.Size = New System.Drawing.Size(150, 44)
+        Me.BtnClose.Size = New System.Drawing.Size(75, 25)
         Me.BtnClose.TabIndex = 3
         Me.BtnClose.Text = "Close"
         Me.BtnClose.UseVisualStyleBackColor = True
@@ -62,34 +59,33 @@ Partial Class FormDisplayAndSort
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(18, 510)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Label1.Location = New System.Drawing.Point(12, 258)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(86, 25)
+        Me.Label1.Size = New System.Drawing.Size(43, 13)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Sort by:"
         '
         'LbxResultSet
         '
         Me.LbxResultSet.FormattingEnabled = True
-        Me.LbxResultSet.ItemHeight = 25
-        Me.LbxResultSet.Location = New System.Drawing.Point(54, 56)
+        Me.LbxResultSet.Location = New System.Drawing.Point(11, 11)
+        Me.LbxResultSet.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.LbxResultSet.Name = "LbxResultSet"
-        Me.LbxResultSet.Size = New System.Drawing.Size(826, 429)
+        Me.LbxResultSet.Size = New System.Drawing.Size(421, 238)
         Me.LbxResultSet.TabIndex = 5
         '
         'FormDisplayAndSort
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(964, 612)
+        Me.ClientSize = New System.Drawing.Size(444, 311)
         Me.Controls.Add(Me.LbxResultSet)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnClose)
         Me.Controls.Add(Me.BtnSortNumber)
         Me.Controls.Add(Me.BtnSortName)
-        Me.Margin = New System.Windows.Forms.Padding(6)
         Me.Name = "FormDisplayAndSort"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Display Customers and Sort"
         Me.ResumeLayout(False)
         Me.PerformLayout()

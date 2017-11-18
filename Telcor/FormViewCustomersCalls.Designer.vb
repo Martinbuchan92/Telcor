@@ -27,26 +27,30 @@ Partial Class FormViewCustomersCalls
         Me.RbNumber = New System.Windows.Forms.RadioButton()
         Me.TxtSearchBox = New System.Windows.Forms.TextBox()
         Me.BtnClose = New System.Windows.Forms.Button()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.RtbResultsBox = New System.Windows.Forms.RichTextBox()
+        Me.BtnSearch = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'CmbSelectOption
         '
         Me.CmbSelectOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbSelectOption.FormattingEnabled = True
-        Me.CmbSelectOption.Items.AddRange(New Object() {"List All", "List All with Calls", "List All with Call details", "List All without Calls", "Search"})
-        Me.CmbSelectOption.Location = New System.Drawing.Point(12, 35)
+        Me.CmbSelectOption.Items.AddRange(New Object() {"List All", "List All With Call Details", "List All Not Contacted", "List All Contacted", "Search"})
+        Me.CmbSelectOption.Location = New System.Drawing.Point(11, 11)
+        Me.CmbSelectOption.Margin = New System.Windows.Forms.Padding(2)
         Me.CmbSelectOption.Name = "CmbSelectOption"
-        Me.CmbSelectOption.Size = New System.Drawing.Size(333, 33)
+        Me.CmbSelectOption.Size = New System.Drawing.Size(168, 21)
         Me.CmbSelectOption.TabIndex = 0
         '
         'RbName
         '
         Me.RbName.AutoSize = True
+        Me.RbName.Checked = True
         Me.RbName.Enabled = False
-        Me.RbName.Location = New System.Drawing.Point(377, 18)
+        Me.RbName.Location = New System.Drawing.Point(197, 11)
+        Me.RbName.Margin = New System.Windows.Forms.Padding(2)
         Me.RbName.Name = "RbName"
-        Me.RbName.Size = New System.Drawing.Size(99, 29)
+        Me.RbName.Size = New System.Drawing.Size(53, 17)
         Me.RbName.TabIndex = 1
         Me.RbName.TabStop = True
         Me.RbName.Text = "Name"
@@ -56,51 +60,70 @@ Partial Class FormViewCustomersCalls
         '
         Me.RbNumber.AutoSize = True
         Me.RbNumber.Enabled = False
-        Me.RbNumber.Location = New System.Drawing.Point(377, 53)
+        Me.RbNumber.Location = New System.Drawing.Point(197, 28)
+        Me.RbNumber.Margin = New System.Windows.Forms.Padding(2)
         Me.RbNumber.Name = "RbNumber"
-        Me.RbNumber.Size = New System.Drawing.Size(118, 29)
+        Me.RbNumber.Size = New System.Drawing.Size(62, 17)
         Me.RbNumber.TabIndex = 2
-        Me.RbNumber.TabStop = True
         Me.RbNumber.Text = "Number"
         Me.RbNumber.UseVisualStyleBackColor = True
         '
         'TxtSearchBox
         '
         Me.TxtSearchBox.Enabled = False
-        Me.TxtSearchBox.Location = New System.Drawing.Point(529, 35)
+        Me.TxtSearchBox.Location = New System.Drawing.Point(266, 12)
+        Me.TxtSearchBox.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtSearchBox.Name = "TxtSearchBox"
-        Me.TxtSearchBox.Size = New System.Drawing.Size(318, 31)
+        Me.TxtSearchBox.Size = New System.Drawing.Size(110, 20)
         Me.TxtSearchBox.TabIndex = 3
         '
         'BtnClose
         '
-        Me.BtnClose.Location = New System.Drawing.Point(699, 542)
+        Me.BtnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.BtnClose.Location = New System.Drawing.Point(362, 275)
+        Me.BtnClose.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnClose.Name = "BtnClose"
-        Me.BtnClose.Size = New System.Drawing.Size(147, 43)
+        Me.BtnClose.Size = New System.Drawing.Size(75, 25)
         Me.BtnClose.TabIndex = 5
         Me.BtnClose.Text = "Close"
         Me.BtnClose.UseVisualStyleBackColor = True
         '
-        'RichTextBox1
+        'RtbResultsBox
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(28, 114)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(817, 402)
-        Me.RichTextBox1.TabIndex = 6
-        Me.RichTextBox1.Text = ""
+        Me.RtbResultsBox.Location = New System.Drawing.Point(11, 49)
+        Me.RtbResultsBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.RtbResultsBox.Name = "RtbResultsBox"
+        Me.RtbResultsBox.ReadOnly = True
+        Me.RtbResultsBox.Size = New System.Drawing.Size(422, 211)
+        Me.RtbResultsBox.TabIndex = 6
+        Me.RtbResultsBox.Text = ""
+        '
+        'BtnSearch
+        '
+        Me.BtnSearch.Location = New System.Drawing.Point(381, 12)
+        Me.BtnSearch.Name = "BtnSearch"
+        Me.BtnSearch.Size = New System.Drawing.Size(56, 20)
+        Me.BtnSearch.TabIndex = 7
+        Me.BtnSearch.Text = "Search"
+        Me.BtnSearch.UseVisualStyleBackColor = True
         '
         'FormViewCustomersCalls
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AcceptButton = Me.BtnSearch
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(874, 597)
-        Me.Controls.Add(Me.RichTextBox1)
+        Me.CancelButton = Me.BtnClose
+        Me.ClientSize = New System.Drawing.Size(444, 311)
+        Me.Controls.Add(Me.BtnSearch)
+        Me.Controls.Add(Me.RtbResultsBox)
         Me.Controls.Add(Me.BtnClose)
         Me.Controls.Add(Me.TxtSearchBox)
         Me.Controls.Add(Me.RbNumber)
         Me.Controls.Add(Me.RbName)
         Me.Controls.Add(Me.CmbSelectOption)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FormViewCustomersCalls"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "View Customer Calls"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -112,5 +135,6 @@ Partial Class FormViewCustomersCalls
     Friend WithEvents RbNumber As RadioButton
     Friend WithEvents TxtSearchBox As TextBox
     Friend WithEvents BtnClose As Button
-    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents RtbResultsBox As RichTextBox
+    Friend WithEvents BtnSearch As Button
 End Class

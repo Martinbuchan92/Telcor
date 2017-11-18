@@ -26,8 +26,8 @@ Partial Class FormViewCustomersCalls
         Me.RbName = New System.Windows.Forms.RadioButton()
         Me.RbNumber = New System.Windows.Forms.RadioButton()
         Me.TxtSearchBox = New System.Windows.Forms.TextBox()
-        Me.LbResultSet = New System.Windows.Forms.ListBox()
         Me.BtnClose = New System.Windows.Forms.Button()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.SuspendLayout()
         '
         'CmbSelectOption
@@ -72,15 +72,6 @@ Partial Class FormViewCustomersCalls
         Me.TxtSearchBox.Size = New System.Drawing.Size(318, 31)
         Me.TxtSearchBox.TabIndex = 3
         '
-        'LbResultSet
-        '
-        Me.LbResultSet.FormattingEnabled = True
-        Me.LbResultSet.ItemHeight = 25
-        Me.LbResultSet.Location = New System.Drawing.Point(20, 106)
-        Me.LbResultSet.Name = "LbResultSet"
-        Me.LbResultSet.Size = New System.Drawing.Size(826, 404)
-        Me.LbResultSet.TabIndex = 4
-        '
         'BtnClose
         '
         Me.BtnClose.Location = New System.Drawing.Point(699, 542)
@@ -90,13 +81,21 @@ Partial Class FormViewCustomersCalls
         Me.BtnClose.Text = "Close"
         Me.BtnClose.UseVisualStyleBackColor = True
         '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(28, 114)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(817, 402)
+        Me.RichTextBox1.TabIndex = 6
+        Me.RichTextBox1.Text = ""
+        '
         'FormViewCustomersCalls
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(874, 597)
+        Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.BtnClose)
-        Me.Controls.Add(Me.LbResultSet)
         Me.Controls.Add(Me.TxtSearchBox)
         Me.Controls.Add(Me.RbNumber)
         Me.Controls.Add(Me.RbName)
@@ -112,6 +111,6 @@ Partial Class FormViewCustomersCalls
     Friend WithEvents RbName As RadioButton
     Friend WithEvents RbNumber As RadioButton
     Friend WithEvents TxtSearchBox As TextBox
-    Friend WithEvents LbResultSet As ListBox
     Friend WithEvents BtnClose As Button
+    Friend WithEvents RichTextBox1 As RichTextBox
 End Class

@@ -4,9 +4,6 @@
         Dim newCall As New TTCall(CmbCallType.SelectedItem, NupDuration.Value, txtNumberCalled.Text)
         Dim index As Integer = CmbCustomer.SelectedIndex
         Telcor.customers(index).TelcorCall.Add(newCall)
-
-
-
         BtnClear.PerformClick()
     End Sub
 
@@ -24,6 +21,5 @@
     End Sub
 
     Private Sub BtnClear_Click(sender As Object, e As EventArgs) Handles BtnClear.Click
-        MsgBox(Telcor.customers(CmbCustomer.SelectedIndex).TelcorCall(0).ToString)
     End Sub
 End Class

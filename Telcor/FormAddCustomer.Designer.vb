@@ -32,71 +32,78 @@ Partial Class FormAddCustomer
         btnClose = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
+        'btnClose
+        '
+        btnClose.Location = New System.Drawing.Point(362, 285)
+        btnClose.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        btnClose.Name = "btnClose"
+        btnClose.Size = New System.Drawing.Size(150, 44)
+        btnClose.TabIndex = 6
+        btnClose.Text = "Close"
+        btnClose.UseVisualStyleBackColor = True
+        AddHandler btnClose.Click, AddressOf Me.btnClose_Click
+        '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(15, 25)
+        Me.txtName.Location = New System.Drawing.Point(30, 48)
+        Me.txtName.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(156, 20)
+        Me.txtName.Size = New System.Drawing.Size(308, 31)
         Me.txtName.TabIndex = 0
         '
         'txtPhoneNumber
         '
-        Me.txtPhoneNumber.Location = New System.Drawing.Point(15, 79)
+        Me.txtPhoneNumber.Location = New System.Drawing.Point(30, 152)
+        Me.txtPhoneNumber.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.txtPhoneNumber.Name = "txtPhoneNumber"
-        Me.txtPhoneNumber.Size = New System.Drawing.Size(156, 20)
+        Me.txtPhoneNumber.Size = New System.Drawing.Size(308, 31)
         Me.txtPhoneNumber.TabIndex = 1
         '
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.Location = New System.Drawing.Point(12, 9)
+        Me.lblName.Location = New System.Drawing.Point(24, 17)
+        Me.lblName.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(35, 13)
+        Me.lblName.Size = New System.Drawing.Size(68, 25)
         Me.lblName.TabIndex = 2
         Me.lblName.Text = "Name"
         '
         'lblPhoneNumber
         '
         Me.lblPhoneNumber.AutoSize = True
-        Me.lblPhoneNumber.Location = New System.Drawing.Point(12, 63)
+        Me.lblPhoneNumber.Location = New System.Drawing.Point(24, 121)
+        Me.lblPhoneNumber.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblPhoneNumber.Name = "lblPhoneNumber"
-        Me.lblPhoneNumber.Size = New System.Drawing.Size(78, 13)
+        Me.lblPhoneNumber.Size = New System.Drawing.Size(155, 25)
         Me.lblPhoneNumber.TabIndex = 3
         Me.lblPhoneNumber.Text = "Phone Number"
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(19, 148)
+        Me.btnSave.Location = New System.Drawing.Point(38, 285)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 23)
+        Me.btnSave.Size = New System.Drawing.Size(150, 44)
         Me.btnSave.TabIndex = 4
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(100, 148)
+        Me.btnClear.Location = New System.Drawing.Point(200, 285)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(75, 23)
+        Me.btnClear.Size = New System.Drawing.Size(150, 44)
         Me.btnClear.TabIndex = 5
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
         '
-        'btnClose
-        '
-        btnClose.Location = New System.Drawing.Point(181, 148)
-        btnClose.Name = "btnClose"
-        btnClose.Size = New System.Drawing.Size(75, 23)
-        btnClose.TabIndex = 6
-        btnClose.Text = "Close"
-        btnClose.UseVisualStyleBackColor = True
-        AddHandler btnClose.Click, AddressOf Me.btnClose_Click
-        '
         'FormAddCustomer
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(268, 183)
+        Me.ClientSize = New System.Drawing.Size(536, 352)
         Me.Controls.Add(btnClose)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.btnSave)
@@ -104,6 +111,7 @@ Partial Class FormAddCustomer
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.txtPhoneNumber)
         Me.Controls.Add(Me.txtName)
+        Me.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.Name = "FormAddCustomer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Add New Customers"

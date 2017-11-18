@@ -41,7 +41,7 @@ Partial Class FormEnterCalls
         Me.CmbCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbCustomer.FormattingEnabled = True
         Me.CmbCustomer.Location = New System.Drawing.Point(22, 46)
-        Me.CmbCustomer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CmbCustomer.Margin = New System.Windows.Forms.Padding(4)
         Me.CmbCustomer.Name = "CmbCustomer"
         Me.CmbCustomer.Size = New System.Drawing.Size(332, 33)
         Me.CmbCustomer.TabIndex = 0
@@ -51,7 +51,7 @@ Partial Class FormEnterCalls
         Me.CmbCallType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbCallType.FormattingEnabled = True
         Me.CmbCallType.Location = New System.Drawing.Point(22, 119)
-        Me.CmbCallType.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CmbCallType.Margin = New System.Windows.Forms.Padding(4)
         Me.CmbCallType.Name = "CmbCallType"
         Me.CmbCallType.Size = New System.Drawing.Size(332, 33)
         Me.CmbCallType.TabIndex = 1
@@ -59,7 +59,7 @@ Partial Class FormEnterCalls
         'txtNumberCalled
         '
         Me.txtNumberCalled.Location = New System.Drawing.Point(22, 263)
-        Me.txtNumberCalled.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNumberCalled.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNumberCalled.Name = "txtNumberCalled"
         Me.txtNumberCalled.Size = New System.Drawing.Size(332, 31)
         Me.txtNumberCalled.TabIndex = 3
@@ -67,7 +67,7 @@ Partial Class FormEnterCalls
         'BtnSave
         '
         Me.BtnSave.Location = New System.Drawing.Point(126, 440)
-        Me.BtnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnSave.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(94, 40)
         Me.BtnSave.TabIndex = 4
@@ -77,7 +77,7 @@ Partial Class FormEnterCalls
         'BtnClear
         '
         Me.BtnClear.Location = New System.Drawing.Point(246, 438)
-        Me.BtnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnClear.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnClear.Name = "BtnClear"
         Me.BtnClear.Size = New System.Drawing.Size(148, 42)
         Me.BtnClear.TabIndex = 5
@@ -87,7 +87,7 @@ Partial Class FormEnterCalls
         'BtnClose
         '
         Me.BtnClose.Location = New System.Drawing.Point(424, 440)
-        Me.BtnClose.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnClose.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(128, 40)
         Me.BtnClose.TabIndex = 6
@@ -97,7 +97,8 @@ Partial Class FormEnterCalls
         'NupDuration
         '
         Me.NupDuration.Location = New System.Drawing.Point(22, 192)
-        Me.NupDuration.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.NupDuration.Margin = New System.Windows.Forms.Padding(4)
+        Me.NupDuration.Maximum = New Decimal(New Integer() {3600, 0, 0, 0})
         Me.NupDuration.Name = "NupDuration"
         Me.NupDuration.Size = New System.Drawing.Size(180, 31)
         Me.NupDuration.TabIndex = 7
@@ -158,7 +159,7 @@ Partial Class FormEnterCalls
         Me.Controls.Add(Me.txtNumberCalled)
         Me.Controls.Add(Me.CmbCallType)
         Me.Controls.Add(Me.CmbCustomer)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FormEnterCalls"
         Me.Text = "Enter Calls"
         CType(Me.NupDuration, System.ComponentModel.ISupportInitialize).EndInit()

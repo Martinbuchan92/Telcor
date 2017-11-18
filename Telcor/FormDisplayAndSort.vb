@@ -1,17 +1,26 @@
 ﻿Public Class FormDisplayAndSort
-    Private Sub btnSortName_Click(sender As Object, e As EventArgs) Handles btnSortName.Click
+
+    Private Sub BtnSortName_Click(sender As Object, e As EventArgs) Handles BtnSortName.Click
+        LbxResultSet.Items.Clear()
+
+        Telcor.customers.Sort()
         For Each person In Telcor.customers
-            ListBox1.Items.Add(person)
+            LbxResultSet.Items.Add(person)
         Next
     End Sub
 
-
-
-    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
         Me.Close()
     End Sub
 
-    Private Sub btnSortNumber_Click(sender As Object, e As EventArgs) Handles btnSortNumber.Click
+    Private Sub BtnSortNumber_Click(sender As Object, e As EventArgs) Handles BtnSortNumber.Click
+        For Each person In Telcor.customers
+            LbxResultSet.Items.Add(person)
+        Next
+    End Sub
+
+    Private Sub FormDisplayAndSort_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
 End Class

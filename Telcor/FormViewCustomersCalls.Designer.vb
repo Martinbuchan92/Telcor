@@ -22,6 +22,7 @@ Partial Class FormViewCustomersCalls
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormViewCustomersCalls))
         Me.CmbSelectOption = New System.Windows.Forms.ComboBox()
         Me.RbName = New System.Windows.Forms.RadioButton()
         Me.RbNumber = New System.Windows.Forms.RadioButton()
@@ -96,6 +97,7 @@ Partial Class FormViewCustomersCalls
         Me.RtbResultsBox.ReadOnly = True
         Me.RtbResultsBox.Size = New System.Drawing.Size(422, 211)
         Me.RtbResultsBox.TabIndex = 6
+        Me.RtbResultsBox.TabStop = False
         Me.RtbResultsBox.Text = ""
         '
         'BtnSearch
@@ -103,7 +105,7 @@ Partial Class FormViewCustomersCalls
         Me.BtnSearch.Location = New System.Drawing.Point(381, 12)
         Me.BtnSearch.Name = "BtnSearch"
         Me.BtnSearch.Size = New System.Drawing.Size(56, 20)
-        Me.BtnSearch.TabIndex = 7
+        Me.BtnSearch.TabIndex = 4
         Me.BtnSearch.Text = "Search"
         Me.BtnSearch.UseVisualStyleBackColor = True
         '
@@ -121,7 +123,10 @@ Partial Class FormViewCustomersCalls
         Me.Controls.Add(Me.RbNumber)
         Me.Controls.Add(Me.RbName)
         Me.Controls.Add(Me.CmbSelectOption)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximizeBox = False
         Me.Name = "FormViewCustomersCalls"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "View Customer Calls"

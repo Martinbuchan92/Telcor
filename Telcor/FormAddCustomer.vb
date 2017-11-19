@@ -1,5 +1,5 @@
 ﻿Public Class FormAddCustomer
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         If txtName.TextLength > 0 And txtPhoneNumber.TextLength > 0 Then
             Dim number = txtPhoneNumber.Text
             Dim custName = "'" + txtName.Text + "'"
@@ -7,11 +7,11 @@
             Dim customer As New Customer(number, custName)
             Telcor.customers.Add(customer)
         End If
-        btnClear.PerformClick()
+        BtnClear.PerformClick()
 
     End Sub
 
-    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles BtnClear.Click
         txtName.Clear()
         txtPhoneNumber.Clear()
     End Sub

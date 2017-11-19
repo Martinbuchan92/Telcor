@@ -49,6 +49,9 @@
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>phone_call_yfO_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -76,6 +79,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="FormAbout.Designer.vb">
+      <DependentUpon>FormAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormCallCost.Designer.vb">
       <DependentUpon>FormCallCost.vb</DependentUpon>
     </Compile>
@@ -106,6 +115,7 @@
     <Compile Include="FormViewCustomersCalls.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SortCustomers.vb" />
     <Compile Include="TTCall.vb" />
     <Compile Include="Customer.vb" />
     <Compile Include="FormTelcorMenu.vb">
@@ -133,6 +143,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormAbout.resx">
+      <DependentUpon>FormAbout.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCallCost.resx">
       <DependentUpon>FormCallCost.vb</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +183,10 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="phone_call_yfO_icon.ico" />
+    <None Include="Resources\phone-call.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

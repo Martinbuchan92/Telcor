@@ -22,6 +22,7 @@ Partial Class FormCallCost
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCallCost))
         Me.TxtDuration = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CmbCallType = New System.Windows.Forms.ComboBox()
@@ -34,17 +35,17 @@ Partial Class FormCallCost
         '
         'TxtDuration
         '
-        Me.TxtDuration.Location = New System.Drawing.Point(150, 25)
+        Me.TxtDuration.Location = New System.Drawing.Point(150, 27)
         Me.TxtDuration.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtDuration.Name = "TxtDuration"
         Me.TxtDuration.Size = New System.Drawing.Size(133, 20)
-        Me.TxtDuration.TabIndex = 0
+        Me.TxtDuration.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(147, 9)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 2)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(96, 13)
         Me.Label1.TabIndex = 1
@@ -53,17 +54,17 @@ Partial Class FormCallCost
         'CmbCallType
         '
         Me.CmbCallType.FormattingEnabled = True
-        Me.CmbCallType.Location = New System.Drawing.Point(11, 24)
+        Me.CmbCallType.Location = New System.Drawing.Point(11, 26)
         Me.CmbCallType.Margin = New System.Windows.Forms.Padding(2)
         Me.CmbCallType.Name = "CmbCallType"
         Me.CmbCallType.Size = New System.Drawing.Size(114, 21)
-        Me.CmbCallType.TabIndex = 2
+        Me.CmbCallType.TabIndex = 0
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(11, 9)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 2)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(51, 13)
         Me.Label2.TabIndex = 3
@@ -71,10 +72,11 @@ Partial Class FormCallCost
         '
         'RtbResponse
         '
-        Me.RtbResponse.Location = New System.Drawing.Point(11, 49)
+        Me.RtbResponse.Location = New System.Drawing.Point(11, 51)
         Me.RtbResponse.Margin = New System.Windows.Forms.Padding(2)
         Me.RtbResponse.Name = "RtbResponse"
-        Me.RtbResponse.Size = New System.Drawing.Size(272, 171)
+        Me.RtbResponse.ReadOnly = True
+        Me.RtbResponse.Size = New System.Drawing.Size(272, 169)
         Me.RtbResponse.TabIndex = 4
         Me.RtbResponse.Text = ""
         '
@@ -85,7 +87,7 @@ Partial Class FormCallCost
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(75, 25)
-        Me.BtnClose.TabIndex = 5
+        Me.BtnClose.TabIndex = 4
         Me.BtnClose.Text = "Close"
         Me.BtnClose.UseVisualStyleBackColor = True
         '
@@ -94,7 +96,7 @@ Partial Class FormCallCost
         Me.BtnCalculate.Location = New System.Drawing.Point(47, 235)
         Me.BtnCalculate.Name = "BtnCalculate"
         Me.BtnCalculate.Size = New System.Drawing.Size(75, 25)
-        Me.BtnCalculate.TabIndex = 6
+        Me.BtnCalculate.TabIndex = 2
         Me.BtnCalculate.Text = "Calculate"
         Me.BtnCalculate.UseVisualStyleBackColor = True
         '
@@ -103,7 +105,7 @@ Partial Class FormCallCost
         Me.BtnClear.Location = New System.Drawing.Point(128, 235)
         Me.BtnClear.Name = "BtnClear"
         Me.BtnClear.Size = New System.Drawing.Size(75, 25)
-        Me.BtnClear.TabIndex = 7
+        Me.BtnClear.TabIndex = 3
         Me.BtnClear.Text = "Clear"
         Me.BtnClear.UseVisualStyleBackColor = True
         '
@@ -122,7 +124,10 @@ Partial Class FormCallCost
         Me.Controls.Add(Me.CmbCallType)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TxtDuration)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximizeBox = False
         Me.Name = "FormCallCost"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Call Cost"

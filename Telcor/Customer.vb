@@ -1,8 +1,4 @@
-﻿Imports Telcor
-
-Public Class Customer
-    Implements IComparable(Of Customer)
-
+﻿Public Class Customer
     Dim callerID As String
     Dim customerName As String
     Dim callCount As Integer
@@ -61,7 +57,7 @@ Public Class Customer
         If found = True Then
             Return details
         End If
-        Return "customer not found"
+        Return ""
     End Function
 
     Public Shared Function PrintDetails(person As Customer, withCalls As Boolean) As String
@@ -72,16 +68,15 @@ Public Class Customer
             For Each item In person.calls
                 callDetails += item.ToString
                 callDetails += Environment.NewLine
+                If item Is person.calls.Last Then
+                    callDetails += Environment.NewLine
+                End If
             Next
         End If
         Return callDetails
     End Function
 
-    Public Function CompareTo(other As Customer) As Integer Implements IComparable(Of Customer).CompareTo
-        Return Me.CustName.CompareTo(other.CustName)
-    End Function
-
-#Region "Get Sets"
+#Region "Properties"
     Public Property TelcorCall() As List(Of TTCall)
         Get
             Return calls

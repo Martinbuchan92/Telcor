@@ -23,4 +23,10 @@
 
         RtbResponse.Text = calculatedCost
     End Sub
+
+    Private Sub BtnClear_Click(sender As Object, e As EventArgs) Handles BtnClear.Click
+        CmbCallType.SelectedIndex = 0
+        TxtDuration.Text = ""
+        RtbResponse.Text = ""
+    End Sub
 End Class

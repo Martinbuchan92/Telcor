@@ -22,6 +22,7 @@ Partial Class FormDisplayAndSort
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormDisplayAndSort))
         Me.BtnSortName = New System.Windows.Forms.Button()
         Me.BtnSortNumber = New System.Windows.Forms.Button()
         Me.BtnClose = New System.Windows.Forms.Button()
@@ -49,6 +50,7 @@ Partial Class FormDisplayAndSort
         '
         'BtnClose
         '
+        Me.BtnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.BtnClose.Location = New System.Drawing.Point(357, 274)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(75, 25)
@@ -59,7 +61,8 @@ Partial Class FormDisplayAndSort
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 258)
+        Me.Label1.Location = New System.Drawing.Point(12, 256)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(3, 0, 3, 2)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(43, 13)
         Me.Label1.TabIndex = 4
@@ -69,7 +72,7 @@ Partial Class FormDisplayAndSort
         '
         Me.LbxResultSet.FormattingEnabled = True
         Me.LbxResultSet.Location = New System.Drawing.Point(11, 11)
-        Me.LbxResultSet.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.LbxResultSet.Margin = New System.Windows.Forms.Padding(2)
         Me.LbxResultSet.Name = "LbxResultSet"
         Me.LbxResultSet.Size = New System.Drawing.Size(421, 238)
         Me.LbxResultSet.TabIndex = 5
@@ -78,12 +81,16 @@ Partial Class FormDisplayAndSort
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.BtnClose
         Me.ClientSize = New System.Drawing.Size(444, 311)
         Me.Controls.Add(Me.LbxResultSet)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnClose)
         Me.Controls.Add(Me.BtnSortNumber)
         Me.Controls.Add(Me.BtnSortName)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "FormDisplayAndSort"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Display Customers and Sort"

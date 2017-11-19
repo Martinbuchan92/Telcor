@@ -22,6 +22,7 @@ Partial Class FormEnterCalls
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormEnterCalls))
         Me.CmbCustomer = New System.Windows.Forms.ComboBox()
         Me.CmbCallType = New System.Windows.Forms.ComboBox()
         Me.txtNumberCalled = New System.Windows.Forms.TextBox()
@@ -40,8 +41,8 @@ Partial Class FormEnterCalls
         '
         Me.CmbCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbCustomer.FormattingEnabled = True
-        Me.CmbCustomer.Location = New System.Drawing.Point(11, 24)
-        Me.CmbCustomer.Margin = New System.Windows.Forms.Padding(2)
+        Me.CmbCustomer.Location = New System.Drawing.Point(11, 26)
+        Me.CmbCustomer.Margin = New System.Windows.Forms.Padding(2, 2, 2, 10)
         Me.CmbCustomer.Name = "CmbCustomer"
         Me.CmbCustomer.Size = New System.Drawing.Size(168, 21)
         Me.CmbCustomer.TabIndex = 0
@@ -50,16 +51,16 @@ Partial Class FormEnterCalls
         '
         Me.CmbCallType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbCallType.FormattingEnabled = True
-        Me.CmbCallType.Location = New System.Drawing.Point(11, 78)
-        Me.CmbCallType.Margin = New System.Windows.Forms.Padding(2)
+        Me.CmbCallType.Location = New System.Drawing.Point(11, 74)
+        Me.CmbCallType.Margin = New System.Windows.Forms.Padding(2, 2, 2, 10)
         Me.CmbCallType.Name = "CmbCallType"
         Me.CmbCallType.Size = New System.Drawing.Size(168, 21)
         Me.CmbCallType.TabIndex = 1
         '
         'txtNumberCalled
         '
-        Me.txtNumberCalled.Location = New System.Drawing.Point(11, 184)
-        Me.txtNumberCalled.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtNumberCalled.Location = New System.Drawing.Point(11, 169)
+        Me.txtNumberCalled.Margin = New System.Windows.Forms.Padding(2, 2, 2, 10)
         Me.txtNumberCalled.Name = "txtNumberCalled"
         Me.txtNumberCalled.Size = New System.Drawing.Size(168, 20)
         Me.txtNumberCalled.TabIndex = 3
@@ -97,8 +98,8 @@ Partial Class FormEnterCalls
         '
         'NupDuration
         '
-        Me.NupDuration.Location = New System.Drawing.Point(11, 125)
-        Me.NupDuration.Margin = New System.Windows.Forms.Padding(2)
+        Me.NupDuration.Location = New System.Drawing.Point(11, 122)
+        Me.NupDuration.Margin = New System.Windows.Forms.Padding(2, 2, 2, 10)
         Me.NupDuration.Maximum = New Decimal(New Integer() {3600, 0, 0, 0})
         Me.NupDuration.Name = "NupDuration"
         Me.NupDuration.Size = New System.Drawing.Size(168, 20)
@@ -107,8 +108,8 @@ Partial Class FormEnterCalls
         'lblCustomer
         '
         Me.lblCustomer.AutoSize = True
-        Me.lblCustomer.Location = New System.Drawing.Point(11, 9)
-        Me.lblCustomer.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCustomer.Location = New System.Drawing.Point(8, 9)
+        Me.lblCustomer.Margin = New System.Windows.Forms.Padding(2, 0, 2, 2)
         Me.lblCustomer.Name = "lblCustomer"
         Me.lblCustomer.Size = New System.Drawing.Size(51, 13)
         Me.lblCustomer.TabIndex = 8
@@ -117,8 +118,8 @@ Partial Class FormEnterCalls
         'LblCallType
         '
         Me.LblCallType.AutoSize = True
-        Me.LblCallType.Location = New System.Drawing.Point(11, 63)
-        Me.LblCallType.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LblCallType.Location = New System.Drawing.Point(8, 57)
+        Me.LblCallType.Margin = New System.Windows.Forms.Padding(2, 0, 2, 2)
         Me.LblCallType.Name = "LblCallType"
         Me.LblCallType.Size = New System.Drawing.Size(51, 13)
         Me.LblCallType.TabIndex = 9
@@ -127,8 +128,8 @@ Partial Class FormEnterCalls
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(11, 110)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Location = New System.Drawing.Point(8, 105)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 2)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(98, 13)
         Me.Label3.TabIndex = 10
@@ -137,8 +138,8 @@ Partial Class FormEnterCalls
         'LblNumberCalled
         '
         Me.LblNumberCalled.AutoSize = True
-        Me.LblNumberCalled.Location = New System.Drawing.Point(11, 169)
-        Me.LblNumberCalled.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LblNumberCalled.Location = New System.Drawing.Point(8, 152)
+        Me.LblNumberCalled.Margin = New System.Windows.Forms.Padding(2, 0, 2, 2)
         Me.LblNumberCalled.Name = "LblNumberCalled"
         Me.LblNumberCalled.Size = New System.Drawing.Size(76, 13)
         Me.LblNumberCalled.TabIndex = 11
@@ -162,7 +163,10 @@ Partial Class FormEnterCalls
         Me.Controls.Add(Me.txtNumberCalled)
         Me.Controls.Add(Me.CmbCallType)
         Me.Controls.Add(Me.CmbCustomer)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximizeBox = False
         Me.Name = "FormEnterCalls"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Enter Calls"

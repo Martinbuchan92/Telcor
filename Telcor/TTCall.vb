@@ -1,14 +1,21 @@
-﻿Public Class TTCall
+﻿Imports System.ComponentModel
+
+Public Class TTCall
 
     Enum CallType
+        <Description("Local Call")>
         LOCAL_CALL
+        <Description("National Call")>
         NAT_CALL
+        <Description("International Call")>
         ISD_CALL
+        <Description("Mobile Call")>
         MOBILE_CALL
+        <Description("Default Call")>
         DEFAULT_CALL
     End Enum
 
-    Dim callID As Integer
+    ReadOnly callID As Integer
     Dim thisCallType As CallType
     Dim duration As Integer
     Dim numberCalled As String
@@ -26,25 +33,29 @@
         Cost = CalculateCost(thisCallType, duration)
     End Sub
 
-    Public Shared Function CalculateCost(ByVal ct As CallType, ByVal duration As Integer) As Decimal
+    Public Shared Function CalculateCost(ByVal ct As CallType, ByVal duration As Integer) As Double
         'Make Constants
         Const LOCAL_RATE = 0.001
         Const NAT_RATE = 0.009
         Const ISD_RATE = 0.015
         Const MOBILE_RATE = 0.019
         Const DEFAULT_RATE = MOBILE_RATE
+        Dim calcCost As Double
 
         Select Case ct
             Case CallType.LOCAL_CALL
-                Return (duration * LOCAL_RATE)
+                calcCost = (duration * LOCAL_RATE)
             Case CallType.NAT_CALL
-                Return (duration * NAT_RATE)
+                calcCost = (duration * NAT_RATE)
             Case CallType.ISD_CALL
-                Return (duration * ISD_RATE)
+                calcCost = (duration * ISD_RATE)
             Case CallType.MOBILE_CALL
-                Return (duration * MOBILE_RATE)
+                calcCost = (duration * MOBILE_RATE)
+            Case Else
+                calcCost = (duration * DEFAULT_RATE)
         End Select
-        Return (duration * DEFAULT_RATE)
+        calcCost = Math.Round(calcCost, 2)
+        Return calcCost
     End Function
 
     Public Shared Function Format(ByVal seconds As Integer, ByVal pattern As Integer) As String
@@ -54,7 +65,7 @@
 
         If pattern = SHORT_TIME Then
             formattedTime = myTime.ToString(("mm:ss"))
-        ElseIf pattern = LONG_TIME Then
+        ElseIf pattern = LONG_Time Then
             formattedTime = String.Format("{0} Minute(s) and {1} Second(s)", myTime.ToString("mm"), myTime.ToString("ss"))
         Else
             formattedTime = "null"

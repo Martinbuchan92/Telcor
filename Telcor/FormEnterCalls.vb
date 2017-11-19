@@ -26,7 +26,5 @@
         CmbCallType.SelectedIndex = -1
         NupDuration.Value = 0
         txtNumberCalled.Clear()
-
     End Sub
-
 End Class

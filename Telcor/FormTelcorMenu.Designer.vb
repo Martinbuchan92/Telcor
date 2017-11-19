@@ -22,6 +22,7 @@ Partial Class FormTelcorMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormTelcorMenu))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoadFileDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -38,8 +39,10 @@ Partial Class FormTelcorMenu
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -58,80 +61,89 @@ Partial Class FormTelcorMenu
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadFileDataToolStripMenuItem, Me.SaveFileDataToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 22)
-        Me.FileToolStripMenuItem.Text = "File"
+        Me.FileToolStripMenuItem.Text = "&File"
         '
         'LoadFileDataToolStripMenuItem
         '
         Me.LoadFileDataToolStripMenuItem.Name = "LoadFileDataToolStripMenuItem"
-        Me.LoadFileDataToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.LoadFileDataToolStripMenuItem.Text = "Load File Data"
+        Me.LoadFileDataToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.L), System.Windows.Forms.Keys)
+        Me.LoadFileDataToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
+        Me.LoadFileDataToolStripMenuItem.Text = "&Load File Data"
         '
         'SaveFileDataToolStripMenuItem
         '
         Me.SaveFileDataToolStripMenuItem.Name = "SaveFileDataToolStripMenuItem"
-        Me.SaveFileDataToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.SaveFileDataToolStripMenuItem.Text = "Save File Data"
+        Me.SaveFileDataToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
+        Me.SaveFileDataToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
+        Me.SaveFileDataToolStripMenuItem.Text = "&Save File Data"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ExitToolStripMenuItem.Text = "Exit"
+        Me.ExitToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
+        Me.ExitToolStripMenuItem.Text = "&Exit"
         '
         'CustomersToolStripMenuItem
         '
         Me.CustomersToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddCustomersToolStripMenuItem, Me.DisplayCustomersAndSortToolStripMenuItem, Me.ViewCustomersCallsToolStripMenuItem})
         Me.CustomersToolStripMenuItem.Name = "CustomersToolStripMenuItem"
         Me.CustomersToolStripMenuItem.Size = New System.Drawing.Size(76, 22)
-        Me.CustomersToolStripMenuItem.Text = "Customers"
+        Me.CustomersToolStripMenuItem.Text = "&Customers"
         '
         'AddCustomersToolStripMenuItem
         '
         Me.AddCustomersToolStripMenuItem.Name = "AddCustomersToolStripMenuItem"
-        Me.AddCustomersToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
-        Me.AddCustomersToolStripMenuItem.Text = "Add Customers"
+        Me.AddCustomersToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
+        Me.AddCustomersToolStripMenuItem.Size = New System.Drawing.Size(261, 22)
+        Me.AddCustomersToolStripMenuItem.Text = "&Add Customers"
         '
         'DisplayCustomersAndSortToolStripMenuItem
         '
         Me.DisplayCustomersAndSortToolStripMenuItem.Name = "DisplayCustomersAndSortToolStripMenuItem"
-        Me.DisplayCustomersAndSortToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
-        Me.DisplayCustomersAndSortToolStripMenuItem.Text = "Display Customers and Sort"
+        Me.DisplayCustomersAndSortToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
+        Me.DisplayCustomersAndSortToolStripMenuItem.Size = New System.Drawing.Size(261, 22)
+        Me.DisplayCustomersAndSortToolStripMenuItem.Text = "&Display Customers and Sort"
         '
         'ViewCustomersCallsToolStripMenuItem
         '
         Me.ViewCustomersCallsToolStripMenuItem.Name = "ViewCustomersCallsToolStripMenuItem"
-        Me.ViewCustomersCallsToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
-        Me.ViewCustomersCallsToolStripMenuItem.Text = "View Customers' Calls"
+        Me.ViewCustomersCallsToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
+        Me.ViewCustomersCallsToolStripMenuItem.Size = New System.Drawing.Size(261, 22)
+        Me.ViewCustomersCallsToolStripMenuItem.Text = "&View Customers' Calls"
         '
         'CallsToolStripMenuItem
         '
         Me.CallsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EnterCallsToolStripMenuItem, Me.CalculateCallCostToolStripMenuItem})
         Me.CallsToolStripMenuItem.Name = "CallsToolStripMenuItem"
         Me.CallsToolStripMenuItem.Size = New System.Drawing.Size(44, 22)
-        Me.CallsToolStripMenuItem.Text = "Calls"
+        Me.CallsToolStripMenuItem.Text = "C&alls"
         '
         'EnterCallsToolStripMenuItem
         '
         Me.EnterCallsToolStripMenuItem.Name = "EnterCallsToolStripMenuItem"
-        Me.EnterCallsToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
-        Me.EnterCallsToolStripMenuItem.Text = "Enter Calls"
+        Me.EnterCallsToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
+        Me.EnterCallsToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
+        Me.EnterCallsToolStripMenuItem.Text = "E&nter Calls"
         '
         'CalculateCallCostToolStripMenuItem
         '
         Me.CalculateCallCostToolStripMenuItem.Name = "CalculateCallCostToolStripMenuItem"
-        Me.CalculateCallCostToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
-        Me.CalculateCallCostToolStripMenuItem.Text = "Calculate Call Cost"
+        Me.CalculateCallCostToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.U), System.Windows.Forms.Keys)
+        Me.CalculateCallCostToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
+        Me.CalculateCallCostToolStripMenuItem.Text = "Calc&ulate Call Cost"
         '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 22)
-        Me.HelpToolStripMenuItem.Text = "Help"
+        Me.HelpToolStripMenuItem.Text = "&Help"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.H), System.Windows.Forms.Keys)
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
@@ -150,23 +162,38 @@ Partial Class FormTelcorMenu
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(0, 17)
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Telcor.My.Resources.Resources.phone_call
+        Me.PictureBox1.InitialImage = Global.Telcor.My.Resources.Resources.phone_call
+        Me.PictureBox1.Location = New System.Drawing.Point(622, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(150, 150)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
         'FormTelcorMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(784, 561)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximizeBox = False
         Me.Name = "FormTelcorMenu"
         Me.Text = "Telcor"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -188,4 +215,5 @@ Partial Class FormTelcorMenu
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

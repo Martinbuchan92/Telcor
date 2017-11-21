@@ -4,7 +4,11 @@ Module Telcor
     Public customers As New List(Of Customer)
 
     Sub Main()
-        Application.Run(FormTelcorMenu)
+        showMenu()
+    End Sub
+
+    Sub showMenu()
+        FormTelcorMenu.ShowDialog()
     End Sub
 
     Sub LoadFileData()
@@ -15,7 +19,7 @@ Module Telcor
 
         Dim cf As String
         Dim dir As String
-
+        'insert Try Catch
         cf = "customers.txt"
         dir = Application.StartupPath & "\" & cf
 

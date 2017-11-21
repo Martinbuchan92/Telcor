@@ -19,4 +19,8 @@
     Private Sub btnClose_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
+
+    Private Sub MaskedTextBox1_Click(sender As Object, e As EventArgs) Handles MaskedTextBox1.Click
+        MaskedTextBox1.Select(0, 0)
+    End Sub
 End Class

@@ -115,7 +115,8 @@
     <Compile Include="FormViewCustomersCalls.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SortCustomers.vb" />
+    <Compile Include="SortCustomersCallerID.vb" />
+    <Compile Include="SortCustomersName.vb" />
     <Compile Include="TTCall.vb" />
     <Compile Include="Customer.vb" />
     <Compile Include="FormTelcorMenu.vb">

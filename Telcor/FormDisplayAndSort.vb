@@ -3,7 +3,7 @@
     Private Sub BtnSortName_Click(sender As Object, e As EventArgs) Handles BtnSortName.Click
         LbxResultSet.Items.Clear()
 
-        customers.Sort()
+        customers.Sort(New SortCustomersName)
         For Each person In Telcor.customers
             LbxResultSet.Items.Add(person)
         Next
@@ -16,6 +16,7 @@
     Private Sub BtnSortNumber_Click(sender As Object, e As EventArgs) Handles BtnSortNumber.Click
         LbxResultSet.Items.Clear()
 
+        customers.Sort(New SortCustomersCallerID)
         For Each person In Telcor.customers
             LbxResultSet.Items.Add(person)
         Next

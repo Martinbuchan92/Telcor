@@ -12,7 +12,11 @@ Public Class FormViewCustomersCalls
         Me.Close()
     End Sub
 
-
+    ''' <summary>
+    ''' Combobox driver for selecting which details to display
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub CmbSelectOption_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbSelectOption.SelectedIndexChanged
         Dim results As String
         RtbResultsBox.Text = ""
@@ -49,6 +53,11 @@ Public Class FormViewCustomersCalls
 
     End Sub
 
+    ''' <summary>
+    ''' Buttons for driving the search bar, searching based on number of name.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub BtnSearch_Click(sender As Object, e As EventArgs) Handles BtnSearch.Click
 
         If RbName.Checked Then
@@ -56,9 +65,5 @@ Public Class FormViewCustomersCalls
         Else
             RtbResultsBox.Text = Customer.FindCustomer(customers, TxtSearchBox.Text, False)
         End If
-    End Sub
-
-    Private Sub FormViewCustomersCalls_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 End Class

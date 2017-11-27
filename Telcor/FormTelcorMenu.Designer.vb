@@ -51,8 +51,7 @@ Partial Class FormTelcorMenu
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.CustomersToolStripMenuItem, Me.CallsToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(3, 1, 0, 1)
-        Me.MenuStrip1.Size = New System.Drawing.Size(784, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1568, 40)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -60,99 +59,101 @@ Partial Class FormTelcorMenu
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadFileDataToolStripMenuItem, Me.SaveFileDataToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 22)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(64, 36)
         Me.FileToolStripMenuItem.Text = "&File"
         '
         'LoadFileDataToolStripMenuItem
         '
         Me.LoadFileDataToolStripMenuItem.Name = "LoadFileDataToolStripMenuItem"
         Me.LoadFileDataToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.L), System.Windows.Forms.Keys)
-        Me.LoadFileDataToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
+        Me.LoadFileDataToolStripMenuItem.Size = New System.Drawing.Size(345, 38)
         Me.LoadFileDataToolStripMenuItem.Text = "&Load File Data"
         '
         'SaveFileDataToolStripMenuItem
         '
         Me.SaveFileDataToolStripMenuItem.Name = "SaveFileDataToolStripMenuItem"
         Me.SaveFileDataToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SaveFileDataToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
+        Me.SaveFileDataToolStripMenuItem.Size = New System.Drawing.Size(345, 38)
         Me.SaveFileDataToolStripMenuItem.Text = "&Save File Data"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(345, 38)
         Me.ExitToolStripMenuItem.Text = "&Exit"
         '
         'CustomersToolStripMenuItem
         '
         Me.CustomersToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddCustomersToolStripMenuItem, Me.DisplayCustomersAndSortToolStripMenuItem, Me.ViewCustomersCallsToolStripMenuItem})
         Me.CustomersToolStripMenuItem.Name = "CustomersToolStripMenuItem"
-        Me.CustomersToolStripMenuItem.Size = New System.Drawing.Size(76, 22)
+        Me.CustomersToolStripMenuItem.Size = New System.Drawing.Size(140, 36)
         Me.CustomersToolStripMenuItem.Text = "&Customers"
         '
         'AddCustomersToolStripMenuItem
         '
         Me.AddCustomersToolStripMenuItem.Name = "AddCustomersToolStripMenuItem"
         Me.AddCustomersToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.AddCustomersToolStripMenuItem.Size = New System.Drawing.Size(261, 22)
+        Me.AddCustomersToolStripMenuItem.Size = New System.Drawing.Size(493, 38)
         Me.AddCustomersToolStripMenuItem.Text = "&Add Customers"
         '
         'DisplayCustomersAndSortToolStripMenuItem
         '
         Me.DisplayCustomersAndSortToolStripMenuItem.Name = "DisplayCustomersAndSortToolStripMenuItem"
         Me.DisplayCustomersAndSortToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
-        Me.DisplayCustomersAndSortToolStripMenuItem.Size = New System.Drawing.Size(261, 22)
+        Me.DisplayCustomersAndSortToolStripMenuItem.Size = New System.Drawing.Size(493, 38)
         Me.DisplayCustomersAndSortToolStripMenuItem.Text = "&Display Customers and Sort"
         '
         'ViewCustomersCallsToolStripMenuItem
         '
         Me.ViewCustomersCallsToolStripMenuItem.Name = "ViewCustomersCallsToolStripMenuItem"
         Me.ViewCustomersCallsToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.ViewCustomersCallsToolStripMenuItem.Size = New System.Drawing.Size(261, 22)
+        Me.ViewCustomersCallsToolStripMenuItem.Size = New System.Drawing.Size(493, 38)
         Me.ViewCustomersCallsToolStripMenuItem.Text = "&View Customers' Calls"
         '
         'CallsToolStripMenuItem
         '
         Me.CallsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EnterCallsToolStripMenuItem, Me.CalculateCallCostToolStripMenuItem})
         Me.CallsToolStripMenuItem.Name = "CallsToolStripMenuItem"
-        Me.CallsToolStripMenuItem.Size = New System.Drawing.Size(44, 22)
+        Me.CallsToolStripMenuItem.Size = New System.Drawing.Size(76, 36)
         Me.CallsToolStripMenuItem.Text = "C&alls"
         '
         'EnterCallsToolStripMenuItem
         '
         Me.EnterCallsToolStripMenuItem.Name = "EnterCallsToolStripMenuItem"
         Me.EnterCallsToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
-        Me.EnterCallsToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
+        Me.EnterCallsToolStripMenuItem.Size = New System.Drawing.Size(395, 38)
         Me.EnterCallsToolStripMenuItem.Text = "E&nter Calls"
         '
         'CalculateCallCostToolStripMenuItem
         '
         Me.CalculateCallCostToolStripMenuItem.Name = "CalculateCallCostToolStripMenuItem"
         Me.CalculateCallCostToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.U), System.Windows.Forms.Keys)
-        Me.CalculateCallCostToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
+        Me.CalculateCallCostToolStripMenuItem.Size = New System.Drawing.Size(395, 38)
         Me.CalculateCallCostToolStripMenuItem.Text = "Calc&ulate Call Cost"
         '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 22)
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(77, 36)
         Me.HelpToolStripMenuItem.Text = "&Help"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
         Me.AboutToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.H), System.Windows.Forms.Keys)
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(264, 38)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'StatusStrip1
         '
+        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(32, 32)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 539)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 1057)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(784, 22)
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(2, 0, 28, 0)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1568, 22)
         Me.StatusStrip1.SizingGrip = False
         Me.StatusStrip1.TabIndex = 1
         Me.StatusStrip1.Text = "StatusStrip1"
@@ -166,26 +167,27 @@ Partial Class FormTelcorMenu
         '
         Me.PictureBox1.Image = Global.Telcor.My.Resources.Resources.phone_call
         Me.PictureBox1.InitialImage = Global.Telcor.My.Resources.Resources.phone_call
-        Me.PictureBox1.Location = New System.Drawing.Point(622, 27)
+        Me.PictureBox1.Location = New System.Drawing.Point(1244, 52)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(150, 150)
+        Me.PictureBox1.Size = New System.Drawing.Size(300, 288)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
         'FormTelcorMenu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(784, 561)
+        Me.ClientSize = New System.Drawing.Size(1568, 1079)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.Name = "FormTelcorMenu"
         Me.Text = "Telcor"

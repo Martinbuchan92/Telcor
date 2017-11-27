@@ -32,18 +32,20 @@ Partial Class FormDisplayAndSort
         '
         'BtnSortName
         '
-        Me.BtnSortName.Location = New System.Drawing.Point(12, 274)
+        Me.BtnSortName.Location = New System.Drawing.Point(24, 527)
+        Me.BtnSortName.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.BtnSortName.Name = "BtnSortName"
-        Me.BtnSortName.Size = New System.Drawing.Size(75, 25)
+        Me.BtnSortName.Size = New System.Drawing.Size(150, 48)
         Me.BtnSortName.TabIndex = 1
         Me.BtnSortName.Text = "Name"
         Me.BtnSortName.UseVisualStyleBackColor = True
         '
         'BtnSortNumber
         '
-        Me.BtnSortNumber.Location = New System.Drawing.Point(93, 274)
+        Me.BtnSortNumber.Location = New System.Drawing.Point(186, 527)
+        Me.BtnSortNumber.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.BtnSortNumber.Name = "BtnSortNumber"
-        Me.BtnSortNumber.Size = New System.Drawing.Size(75, 25)
+        Me.BtnSortNumber.Size = New System.Drawing.Size(150, 48)
         Me.BtnSortNumber.TabIndex = 2
         Me.BtnSortNumber.Text = "Number"
         Me.BtnSortNumber.UseVisualStyleBackColor = True
@@ -51,9 +53,10 @@ Partial Class FormDisplayAndSort
         'BtnClose
         '
         Me.BtnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.BtnClose.Location = New System.Drawing.Point(357, 274)
+        Me.BtnClose.Location = New System.Drawing.Point(714, 527)
+        Me.BtnClose.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.BtnClose.Name = "BtnClose"
-        Me.BtnClose.Size = New System.Drawing.Size(75, 25)
+        Me.BtnClose.Size = New System.Drawing.Size(150, 48)
         Me.BtnClose.TabIndex = 3
         Me.BtnClose.Text = "Close"
         Me.BtnClose.UseVisualStyleBackColor = True
@@ -61,28 +64,29 @@ Partial Class FormDisplayAndSort
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 256)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(3, 0, 3, 2)
+        Me.Label1.Location = New System.Drawing.Point(24, 492)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 4)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(43, 13)
+        Me.Label1.Size = New System.Drawing.Size(86, 25)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Sort by:"
         '
         'LbxResultSet
         '
         Me.LbxResultSet.FormattingEnabled = True
-        Me.LbxResultSet.Location = New System.Drawing.Point(11, 11)
-        Me.LbxResultSet.Margin = New System.Windows.Forms.Padding(2)
+        Me.LbxResultSet.ItemHeight = 25
+        Me.LbxResultSet.Location = New System.Drawing.Point(22, 21)
+        Me.LbxResultSet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LbxResultSet.Name = "LbxResultSet"
-        Me.LbxResultSet.Size = New System.Drawing.Size(421, 238)
+        Me.LbxResultSet.Size = New System.Drawing.Size(838, 454)
         Me.LbxResultSet.TabIndex = 5
         '
         'FormDisplayAndSort
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.BtnClose
-        Me.ClientSize = New System.Drawing.Size(444, 311)
+        Me.ClientSize = New System.Drawing.Size(888, 598)
         Me.Controls.Add(Me.LbxResultSet)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnClose)
@@ -90,6 +94,7 @@ Partial Class FormDisplayAndSort
         Me.Controls.Add(Me.BtnSortName)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.MaximizeBox = False
         Me.Name = "FormDisplayAndSort"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent

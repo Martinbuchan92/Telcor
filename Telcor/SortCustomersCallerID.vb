@@ -20,8 +20,5 @@ Public Class SortCustomersCallerID
         Else
             Return 0
         End If
-
     End Function
-
-
 End Class

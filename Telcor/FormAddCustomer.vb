@@ -1,4 +1,12 @@
-﻿Public Class FormAddCustomer
+﻿''' <summary>
+''' Form to allow adding new customers to the system
+''' </summary>
+Public Class FormAddCustomer
+    ''' <summary>
+    ''' Takes the information from the user inputs and creates a new customer object
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         If txtName.TextLength > 0 And txtPhoneNumber.TextLength > 0 Then
             Dim number = txtPhoneNumber.Text
@@ -8,19 +16,24 @@
             Telcor.customers.Add(customer)
         End If
         BtnClear.PerformClick()
-
     End Sub
 
-    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles BtnClear.Click
+    ''' <summary>
+    ''' Clears the fields without saving
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub BtnClear_Click(sender As Object, e As EventArgs) Handles BtnClear.Click
         txtName.Clear()
         txtPhoneNumber.Clear()
     End Sub
 
-    Private Sub btnClose_Click(sender As Object, e As EventArgs)
+    ''' <summary>
+    ''' Closes the form
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs)
         Me.Close()
-    End Sub
-
-    Private Sub MaskedTextBox1_Click(sender As Object, e As EventArgs) Handles MaskedTextBox1.Click
-        MaskedTextBox1.Select(0, 0)
     End Sub
 End Class

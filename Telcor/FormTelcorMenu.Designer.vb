@@ -144,7 +144,7 @@ Partial Class FormTelcorMenu
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
         Me.AboutToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.H), System.Windows.Forms.Keys)
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'StatusStrip1
@@ -166,7 +166,7 @@ Partial Class FormTelcorMenu
         '
         Me.PictureBox1.Image = Global.Telcor.My.Resources.Resources.phone_call
         Me.PictureBox1.InitialImage = Global.Telcor.My.Resources.Resources.phone_call
-        Me.PictureBox1.Location = New System.Drawing.Point(622, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(622, 27)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(150, 150)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom

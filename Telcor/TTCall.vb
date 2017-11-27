@@ -6,24 +6,21 @@
 Public Class TTCall
     '''
     Enum CallType
-        <Description("Local Call")>
         LOCAL_CALL
-        <Description("National Call")>
         NAT_CALL
-        <Description("International Call")>
         ISD_CALL
-        <Description("Mobile Call")>
         MOBILE_CALL
-        <Description("Default Call")>
         DEFAULT_CALL
     End Enum
 
-    ReadOnly callID As Integer
-    Dim thisCallType As CallType
-    Dim duration As Integer
-    Dim numberCalled As String
-    ReadOnly Cost As Double
-    Shared nextCallID As Integer = 1
+    Dim callDescriptions() As String = {"Local Call", "National Call", "International Call", "Mobile Call", "Default Call"}
+
+    Private ReadOnly callID As Integer
+    Private thisCallType As CallType
+    Private duration As Integer
+    Private numberCalled As String
+    Private ReadOnly Cost As Double
+    Private Shared nextCallID As Integer = 1
     Const SHORT_TIME = 0
     Const LONG_Time = 1
 

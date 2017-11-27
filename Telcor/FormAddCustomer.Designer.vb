@@ -30,6 +30,7 @@ Partial Class FormAddCustomer
         Me.lblPhoneNumber = New System.Windows.Forms.Label()
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnClear = New System.Windows.Forms.Button()
+        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
         BtnClose = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -96,6 +97,15 @@ Partial Class FormAddCustomer
         Me.BtnClear.Text = "Clear"
         Me.BtnClear.UseVisualStyleBackColor = True
         '
+        'MaskedTextBox1
+        '
+        Me.MaskedTextBox1.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(15, 134)
+        Me.MaskedTextBox1.Mask = "9999 000 0000"
+        Me.MaskedTextBox1.Name = "MaskedTextBox1"
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.MaskedTextBox1.TabIndex = 5
+        '
         'FormAddCustomer
         '
         Me.AcceptButton = Me.BtnSave
@@ -103,6 +113,7 @@ Partial Class FormAddCustomer
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = BtnClose
         Me.ClientSize = New System.Drawing.Size(294, 271)
+        Me.Controls.Add(Me.MaskedTextBox1)
         Me.Controls.Add(BtnClose)
         Me.Controls.Add(Me.BtnClear)
         Me.Controls.Add(Me.BtnSave)
@@ -127,4 +138,5 @@ Partial Class FormAddCustomer
     Friend WithEvents lblPhoneNumber As Label
     Friend WithEvents BtnSave As Button
     Friend WithEvents BtnClear As Button
+    Friend WithEvents MaskedTextBox1 As MaskedTextBox
 End Class

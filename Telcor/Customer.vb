@@ -2,10 +2,10 @@
 ''' Used for Customer Objects. 
 ''' </summary>
 Public Class Customer
-    Dim callerID As String
-    Dim customerName As String
-    Dim callCount As Integer
-    Dim calls As New List(Of TTCall)
+    Private callerID As String
+    Private customerName As String
+    Private callCount As Integer
+    Private calls As New List(Of TTCall)
 
     ''' <summary>
     ''' Constructor for creating customer instances

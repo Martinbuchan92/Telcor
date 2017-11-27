@@ -21,6 +21,7 @@ Module Telcor
 
     ''' <summary>
     ''' Loads the customer information into an arraylist so it can be manipulated.
+    ''' If the customer.txt file can not be found in the default folder the user is prompted to select one.
     ''' </summary>
     Sub LoadFileData()
         If customers.Count > 0 Then
@@ -29,30 +30,36 @@ Module Telcor
 
         Dim cf As String
         Dim dir As String
-
+        Dim test As Boolean = True
 
         cf = "customers.txt"
         dir = Application.StartupPath & "\" & cf
 
-        Try
-            Dim textIn As New StreamReader(
-            New FileStream(
-            dir, FileMode.Open, FileAccess.Read))
+        While test = True
+            Try
+                Dim textIn As New StreamReader(
+                New FileStream(
+                dir, FileMode.Open, FileAccess.Read))
 
-            Do While textIn.Peek <> -1
-                Dim row As String = textIn.ReadLine
-                Dim columns() As String = row.Split(", ")
-                columns(1) = columns(1).Replace(" '", "")
-                columns(1) = columns(1).Replace("'", "")
-                Dim customer As New Customer(columns(0), columns(1))
-                customers.Add(customer)
-            Loop
+                Do While textIn.Peek <> -1
+                    Dim row As String = textIn.ReadLine
+                    Dim columns() As String = row.Split(", ")
+                    columns(1) = columns(1).Replace(" '", "")
+                    columns(1) = columns(1).Replace("'", "")
+                    Dim customer As New Customer(columns(0), columns(1))
+                    customers.Add(customer)
+                Loop
 
-            textIn.Close()
-        Catch e As FileNotFoundException
-            dir = OpenFile()
-        End Try
-
+                textIn.Close()
+                test = False
+            Catch e As FileNotFoundException
+                dir = OpenFile()
+            Catch e As IOException
+                MsgBox(e.ToString)
+            Catch e As IndexOutOfRangeException
+                MsgBox(e.ToString)
+            End Try
+        End While
     End Sub
 
     ''' <summary>
@@ -70,7 +77,8 @@ Module Telcor
         fd.RestoreDirectory = True
 
         If fd.ShowDialog() = DialogResult.OK Then
-            Return strFileName = fd.FileName
+            strFileName = fd.FileName
+            Return strFileName
         End If
 
         Return strFileName

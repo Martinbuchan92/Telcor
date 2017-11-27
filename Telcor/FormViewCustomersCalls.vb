@@ -1,7 +1,17 @@
-﻿Public Class FormViewCustomersCalls
+﻿''' <summary>
+''' Form for viewing which calls a customer has made
+''' </summary>
+Public Class FormViewCustomersCalls
+
+    ''' <summary>
+    ''' Handles button click event for the close button.  Closes the Form
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
         Me.Close()
     End Sub
+
 
     Private Sub CmbSelectOption_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbSelectOption.SelectedIndexChanged
         Dim results As String
@@ -46,5 +56,9 @@
         Else
             RtbResultsBox.Text = Customer.FindCustomer(customers, TxtSearchBox.Text, False)
         End If
+    End Sub
+
+    Private Sub FormViewCustomersCalls_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

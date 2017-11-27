@@ -1,7 +1,10 @@
 ﻿Imports System.ComponentModel
 
+''' <summary>
+''' TTCall Class for creating call objects.
+''' </summary>
 Public Class TTCall
-
+    '''
     Enum CallType
         <Description("Local Call")>
         LOCAL_CALL
@@ -24,6 +27,12 @@ Public Class TTCall
     Const SHORT_TIME = 0
     Const LONG_Time = 1
 
+    ''' <summary>
+    ''' Constructor for new calls
+    ''' </summary>
+    ''' <param name="ct">Call Type as one of the CallType Enum</param>
+    ''' <param name="c_duration">Duration of the call being documented to be used in other methods for calculations</param>
+    ''' <param name="c_numberCalled">The phone number the customer called for documentation</param>
     Public Sub New(ByVal ct As CallType, ByVal c_duration As Integer, ByVal c_numberCalled As String)
         thisCallType = ct
         duration = c_duration
@@ -33,8 +42,13 @@ Public Class TTCall
         Cost = CalculateCost(thisCallType, duration)
     End Sub
 
+    ''' <summary>
+    ''' Calculates the cost of calls given inputs.  Can be called independently of TTCall objects
+    ''' </summary>
+    ''' <param name="ct">Call Type as per the call type Enun to decide call rates</param>
+    ''' <param name="duration">Duration of call to calculate cost</param>
+    ''' <returns>Returns the calculated cost in a 2 decimal Double format for easy use as currency</returns>
     Public Shared Function CalculateCost(ByVal ct As CallType, ByVal duration As Integer) As Double
-        'Make Constants
         Const LOCAL_RATE = 0.001
         Const NAT_RATE = 0.009
         Const ISD_RATE = 0.015
@@ -58,6 +72,12 @@ Public Class TTCall
         Return calcCost
     End Function
 
+    ''' <summary>
+    ''' Allows the call duration to be displayed in short or long form Strings
+    ''' </summary>
+    ''' <param name="seconds">Length of the call in seconds</param>
+    ''' <param name="pattern">Short or Long form string for the call length to be converted to.  0 for short and 1 for long.</param>
+    ''' <returns>Returns the requested formatted time as a String</returns>
     Public Shared Function Format(ByVal seconds As Integer, ByVal pattern As Integer) As String
         Dim formattedTime As String
         Dim span As TimeSpan = TimeSpan.FromSeconds(seconds)
@@ -74,12 +94,16 @@ Public Class TTCall
         Return formattedTime
     End Function
 
+    ''' <summary>
+    ''' Allows the call to be printed in full for easy display and export.
+    ''' </summary>
+    ''' <returns>The Call instance data as a string</returns>
     Public Overrides Function ToString() As String
         Dim objectData = String.Format("{0}, {1}, {2}, {3}", numberCalled, thisCallType, Format(duration, 0), (FormatCurrency(CDbl(Cost), 2)))
         Return objectData
     End Function
 
-#Region "Get Sets"
+#Region "properties"
     Public ReadOnly Property PropCallID() As Integer
         Get
             Return callID

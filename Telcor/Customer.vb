@@ -1,19 +1,38 @@
-﻿Public Class Customer
+﻿''' <summary>
+''' Used for Customer Objects. 
+''' </summary>
+Public Class Customer
     Dim callerID As String
     Dim customerName As String
     Dim callCount As Integer
     Dim calls As New List(Of TTCall)
 
+    ''' <summary>
+    ''' Constructor for creating customer instances
+    ''' </summary>
+    ''' <param name="c_callerID">Customer phone number</param>
+    ''' <param name="c_custName">Customer Name</param>
     Public Sub New(ByVal c_callerID As String, ByVal c_custName As String)
         callerID = c_callerID
         customerName = c_custName
     End Sub
 
+    ''' <summary>
+    ''' Allows the customers information to be printed or exported in an easy format as a single string
+    ''' </summary>
+    ''' <returns>String containing the customers details</returns>
     Public Overrides Function ToString() As String
         Dim objectData = String.Format("{0}, '{1}'", callerID, customerName)
         Return objectData
     End Function
 
+    ''' <summary>
+    ''' Formats the customer data as per requirements to enable printing of various information
+    ''' </summary>
+    ''' <param name="customers">Inserts the Customer List to print from</param>
+    ''' <param name="withCallData">Select if the exported string should include call data</param>
+    ''' <param name="zeroCalls">select if the exported string should include customers with no calls recorded</param>
+    ''' <returns>Requested information in correct format.</returns>
     Public Shared Function Format(ByVal customers As List(Of Customer), ByVal withCallData As Boolean, ByVal zeroCalls As Boolean) As String
         Dim formatted As String = ""
 
@@ -38,6 +57,13 @@
         Return formatted
     End Function
 
+    ''' <summary>
+    ''' Searches a list of customers to find a specific one
+    ''' </summary>
+    ''' <param name="customers">List of customers to be searched for</param>
+    ''' <param name="search">Value to look for</param>
+    ''' <param name="byName">If the search value is a name or a number with true being to search by name and false being to search by customer ID</param>
+    ''' <returns>Returns the found customers details as a string</returns>
     Public Shared Function FindCustomer(ByVal customers As List(Of Customer), ByVal search As String, ByVal byName As Boolean) As String
         Dim details As String = ""
         Dim found As Boolean = False
@@ -60,6 +86,12 @@
         Return ""
     End Function
 
+    ''' <summary>
+    ''' Returns The formated string of customer information including calls to be easily called for populating views
+    ''' </summary>
+    ''' <param name="person">The instance of customer to be printed to string</param>
+    ''' <param name="withCalls">If this persons calls are to be included in the returned string</param>
+    ''' <returns>Returns the details of the selected customer instance with or without calls following their name, as user requests</returns>
     Public Shared Function PrintDetails(person As Customer, withCalls As Boolean) As String
         Dim callDetails As String = ""
         callDetails += person.ToString()

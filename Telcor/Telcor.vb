@@ -54,12 +54,33 @@ Module Telcor
                 test = False
             Catch e As FileNotFoundException
                 dir = OpenFile()
+                loadTestData()
+                test = False
             Catch e As IOException
                 MsgBox(e.ToString)
+                loadTestData()
+                test = False
             Catch e As IndexOutOfRangeException
                 MsgBox(e.ToString)
+                loadTestData()
+                test = False
+            Catch e As Exception
+                MsgBox(e.ToString)
+                loadTestData()
+                test = False
             End Try
         End While
+    End Sub
+
+    Sub loadTestData()
+        customers.Add(New Customer("0241 444 111", "Kara Thrace"))
+        customers.Add(New Customer("0321 222 111", "Karl Agathon"))
+        customers.Add(New Customer("0411 111 111", "Laura Roslin"))
+        customers.Add(New Customer("0412 111 222", "William Adama"))
+        customers.Add(New Customer("0414 111 444", "Sharon Valerii"))
+        customers.Add(New Customer("0438 333 888", "Lee Adama"))
+        customers.Add(New Customer(" 0457 555 777", "Saul Tigh"))
+        customers.Add(New Customer("0478 777 888", "Sam Anders"))
     End Sub
 
     ''' <summary>
@@ -70,17 +91,21 @@ Module Telcor
         Dim fd As OpenFileDialog = New OpenFileDialog()
         Dim strFileName As String = ""
 
-        fd.Title = "Open File Dialog"
-        fd.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
-        fd.Filter = "txt files (*.txt)|*.txt"
-        fd.FilterIndex = 2
-        fd.RestoreDirectory = True
+        Try
+            fd.Title = "Open File Dialog"
+            fd.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
+            fd.Filter = "txt files (*.txt)|*.txt"
+            fd.FilterIndex = 2
+            fd.RestoreDirectory = True
 
-        If fd.ShowDialog() = DialogResult.OK Then
-            strFileName = fd.FileName
-            Return strFileName
-        End If
-
+            If fd.ShowDialog() = DialogResult.OK Then
+                strFileName = fd.FileName
+                Return strFileName
+            End If
+        Catch e As Exception
+            MsgBox(e.ToString + "Loading test data")
+            loadTestData()
+        End Try
         Return strFileName
     End Function
 

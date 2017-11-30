@@ -168,7 +168,7 @@ Partial Class FormTelcorMenu
         Me.PictureBox1.Image = Global.Telcor.My.Resources.Resources.phone_call
         Me.PictureBox1.InitialImage = Global.Telcor.My.Resources.Resources.phone_call
         Me.PictureBox1.Location = New System.Drawing.Point(1244, 52)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(6)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(300, 288)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -187,7 +187,7 @@ Partial Class FormTelcorMenu
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "FormTelcorMenu"
         Me.Text = "Telcor"

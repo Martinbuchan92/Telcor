@@ -9,7 +9,12 @@ Module Telcor
     ''' Separates from ShowMenu as per assignment specs
     ''' </summary>
     Sub Main()
-        ShowMenu()
+        Try
+            ShowMenu()
+        Catch ex As Exception
+            MsgBox("There was an unknown exception, restarting program")
+            ShowMenu()
+        End Try
     End Sub
 
     ''' <summary>
@@ -28,106 +33,74 @@ Module Telcor
             customers.Clear()
         End If
 
-        Dim cf As String
-        Dim dir As String
-        Dim test As Boolean = True
+        Dim cf As String = "customers.txt"
+        Dim dir As String = Application.StartupPath & "\" & cf
 
-        cf = "customers.txt"
-        dir = Application.StartupPath & "\" & cf
+        Try
+            Dim textIn As New StreamReader(
+            New FileStream(
+            dir, FileMode.Open, FileAccess.Read))
 
-        While test = True
-            Try
-                Dim textIn As New StreamReader(
-                New FileStream(
-                dir, FileMode.Open, FileAccess.Read))
+            Do While textIn.Peek <> -1
+                Dim row As String = textIn.ReadLine
+                Dim columns() As String = row.Split(", ")
+                columns(1) = columns(1).Replace(" '", "")
+                columns(1) = columns(1).Replace("'", "")
+                Dim customer As New Customer(columns(0), columns(1))
+                customers.Add(customer)
+            Loop
 
-                Do While textIn.Peek <> -1
-                    Dim row As String = textIn.ReadLine
-                    Dim columns() As String = row.Split(", ")
-                    columns(1) = columns(1).Replace(" '", "")
-                    columns(1) = columns(1).Replace("'", "")
-                    Dim customer As New Customer(columns(0), columns(1))
-                    customers.Add(customer)
-                Loop
+            textIn.Close()
+        Catch e As FileNotFoundException
+            MsgBox("File not found - Loading seed data", MessageBoxButtons.OK)
+            Telcor.LoadTestData()
+        Catch e As IOException
+            MsgBox("Error loading File - Loading seed data", MessageBoxButtons.OK)
+            Telcor.LoadTestData()
+        Catch e As IndexOutOfRangeException
+            MsgBox("Error loading File - Loading seed data", MessageBoxButtons.OK)
+            Telcor.LoadTestData()
+        Finally
 
-                textIn.Close()
-                test = False
-            Catch e As FileNotFoundException
-                dir = OpenFile()
-                loadTestData()
-                test = False
-            Catch e As IOException
-                MsgBox(e.ToString)
-                loadTestData()
-                test = False
-            Catch e As IndexOutOfRangeException
-                MsgBox(e.ToString)
-                loadTestData()
-                test = False
-            Catch e As Exception
-                MsgBox(e.ToString)
-                loadTestData()
-                test = False
-            End Try
-        End While
+        End Try
     End Sub
 
-    Sub loadTestData()
+    ''' <summary>
+    ''' inserts seed data in case of errors
+    ''' </summary>
+    Sub LoadTestData()
         customers.Add(New Customer("0241 444 111", "Kara Thrace"))
         customers.Add(New Customer("0321 222 111", "Karl Agathon"))
         customers.Add(New Customer("0411 111 111", "Laura Roslin"))
         customers.Add(New Customer("0412 111 222", "William Adama"))
         customers.Add(New Customer("0414 111 444", "Sharon Valerii"))
         customers.Add(New Customer("0438 333 888", "Lee Adama"))
-        customers.Add(New Customer(" 0457 555 777", "Saul Tigh"))
+        customers.Add(New Customer("0457 555 777", "Saul Tigh"))
         customers.Add(New Customer("0478 777 888", "Sam Anders"))
     End Sub
-
-    ''' <summary>
-    ''' calls an open file dialog to allow the selecting of an input data file in case the default customer.txt can not be found
-    ''' </summary>
-    ''' <returns>Path of input file location</returns>
-    Function OpenFile() As String
-        Dim fd As OpenFileDialog = New OpenFileDialog()
-        Dim strFileName As String = ""
-
-        Try
-            fd.Title = "Open File Dialog"
-            fd.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
-            fd.Filter = "txt files (*.txt)|*.txt"
-            fd.FilterIndex = 2
-            fd.RestoreDirectory = True
-
-            If fd.ShowDialog() = DialogResult.OK Then
-                strFileName = fd.FileName
-                Return strFileName
-            End If
-        Catch e As Exception
-            MsgBox(e.ToString + "Loading test data")
-            loadTestData()
-        End Try
-        Return strFileName
-    End Function
 
     ''' <summary>
     ''' Save the data input by the user in the program that is stored in the Customer and Calls arrayLists to txt file as CSV
     ''' </summary>
     ''' <param name="type">Determines if the data being saved is customer or calls with 0 being customer and 1 being calls</param>
     Sub SaveFileData(type As Integer)
+
+        Dim cf As String
+        Dim dir As String
+
+        If type = 0 Then
+            cf = "customers.txt"
+        Else
+            cf = "calls.txt"
+        End If
+
         Try
-            Dim cf As String
-            Dim dir As String
-
-            If type = 0 Then
-                cf = "customers.txt"
-            Else
-                cf = "calls.txt"
-            End If
-
             dir = Application.StartupPath & "\" & cf
-            File.Delete(dir)
+            If File.Exists(dir) Then
+                File.Delete(dir)
+            End If
             Dim textOut As New StreamWriter(
-                New FileStream(dir, FileMode.Create, FileAccess.Write))
+        New FileStream(dir, FileMode.Create, FileAccess.Write))
 
             For Each person In customers
                 If type = 0 Then
@@ -138,10 +111,12 @@ Module Telcor
                     Next
                 End If
             Next
-
             textOut.Close()
-        Catch ex As IOException
+        Catch
+            '
+
         End Try
+
     End Sub
 
 End Module

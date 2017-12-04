@@ -51,13 +51,13 @@ Module Telcor
             Loop
 
             textIn.Close()
+        Catch e As IndexOutOfRangeException
+            MsgBox("Error loading File - Loading seed data", MessageBoxButtons.OK)
+            Telcor.LoadTestData()
         Catch e As FileNotFoundException
             MsgBox("File not found - Loading seed data", MessageBoxButtons.OK)
             Telcor.LoadTestData()
         Catch e As IOException
-            MsgBox("Error loading File - Loading seed data", MessageBoxButtons.OK)
-            Telcor.LoadTestData()
-        Catch e As IndexOutOfRangeException
             MsgBox("Error loading File - Loading seed data", MessageBoxButtons.OK)
             Telcor.LoadTestData()
         Finally

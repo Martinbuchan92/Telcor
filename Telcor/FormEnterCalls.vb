@@ -16,7 +16,7 @@ Public Class FormEnterCalls
             Telcor.customers(index).CustCallCount += 1
             BtnClear.PerformClick()
         Else
-            MsgBox("Please enter a valid phone number")
+            MsgBox("Please enter a valid phone number without spaces")
         End If
     End Sub
 

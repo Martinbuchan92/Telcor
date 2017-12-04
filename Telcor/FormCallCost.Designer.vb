@@ -23,7 +23,6 @@ Partial Class FormCallCost
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCallCost))
-        Me.TxtDuration = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CmbCallType = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -31,15 +30,9 @@ Partial Class FormCallCost
         Me.BtnClose = New System.Windows.Forms.Button()
         Me.BtnCalculate = New System.Windows.Forms.Button()
         Me.BtnClear = New System.Windows.Forms.Button()
+        Me.NupDuration = New System.Windows.Forms.NumericUpDown()
+        CType(Me.NupDuration, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'TxtDuration
-        '
-        Me.TxtDuration.Location = New System.Drawing.Point(150, 27)
-        Me.TxtDuration.Margin = New System.Windows.Forms.Padding(2)
-        Me.TxtDuration.Name = "TxtDuration"
-        Me.TxtDuration.Size = New System.Drawing.Size(133, 20)
-        Me.TxtDuration.TabIndex = 1
         '
         'Label1
         '
@@ -53,6 +46,7 @@ Partial Class FormCallCost
         '
         'CmbCallType
         '
+        Me.CmbCallType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbCallType.FormattingEnabled = True
         Me.CmbCallType.Location = New System.Drawing.Point(11, 26)
         Me.CmbCallType.Margin = New System.Windows.Forms.Padding(2)
@@ -72,7 +66,7 @@ Partial Class FormCallCost
         '
         'RtbResponse
         '
-        Me.RtbResponse.Location = New System.Drawing.Point(11, 51)
+        Me.RtbResponse.Location = New System.Drawing.Point(11, 61)
         Me.RtbResponse.Margin = New System.Windows.Forms.Padding(2)
         Me.RtbResponse.Name = "RtbResponse"
         Me.RtbResponse.ReadOnly = True
@@ -109,6 +103,14 @@ Partial Class FormCallCost
         Me.BtnClear.Text = "Clear"
         Me.BtnClear.UseVisualStyleBackColor = True
         '
+        'NupDuration
+        '
+        Me.NupDuration.Location = New System.Drawing.Point(150, 27)
+        Me.NupDuration.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.NupDuration.Name = "NupDuration"
+        Me.NupDuration.Size = New System.Drawing.Size(120, 20)
+        Me.NupDuration.TabIndex = 5
+        '
         'FormCallCost
         '
         Me.AcceptButton = Me.BtnCalculate
@@ -116,6 +118,7 @@ Partial Class FormCallCost
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.BtnClose
         Me.ClientSize = New System.Drawing.Size(294, 271)
+        Me.Controls.Add(Me.NupDuration)
         Me.Controls.Add(Me.BtnClear)
         Me.Controls.Add(Me.BtnCalculate)
         Me.Controls.Add(Me.BtnClose)
@@ -123,7 +126,6 @@ Partial Class FormCallCost
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.CmbCallType)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TxtDuration)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -131,12 +133,11 @@ Partial Class FormCallCost
         Me.Name = "FormCallCost"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Call Cost"
+        CType(Me.NupDuration, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents TxtDuration As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents CmbCallType As ComboBox
     Friend WithEvents Label2 As Label
@@ -144,4 +145,5 @@ Partial Class FormCallCost
     Friend WithEvents BtnClose As Button
     Friend WithEvents BtnCalculate As Button
     Friend WithEvents BtnClear As Button
+    Friend WithEvents NupDuration As NumericUpDown
 End Class

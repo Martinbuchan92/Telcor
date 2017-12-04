@@ -112,11 +112,8 @@ Module Telcor
                 End If
             Next
             textOut.Close()
-        Catch
-            '
-
+        Catch ex As Exception
+            MsgBox(ex.ToString + "there was an exception while saving")
         End Try
-
     End Sub
-
 End Module

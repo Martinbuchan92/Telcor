@@ -1,6 +1,4 @@
-﻿Imports System.ComponentModel
-
-''' <summary>
+﻿''' <summary>
 ''' TTCall Class for creating call objects.
 ''' </summary>
 Public Class TTCall

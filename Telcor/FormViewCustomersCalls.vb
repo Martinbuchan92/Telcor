@@ -21,6 +21,10 @@ Public Class FormViewCustomersCalls
         Dim results As String
         RtbResultsBox.Text = ""
         'List All
+        TxtSearchBox.Enabled = False
+        RbName.Enabled = False
+        RbNumber.Enabled = False
+        BtnSearch.Enabled = False
         If CmbSelectOption.SelectedIndex = 0 Then
             results = Customer.Format(customers, True, True)
             RtbResultsBox.Text += results
@@ -45,10 +49,9 @@ Public Class FormViewCustomersCalls
             TxtSearchBox.Enabled = True
             RbName.Enabled = True
             RbNumber.Enabled = True
+            BtnSearch.Enabled = True
         Else
-            TxtSearchBox.Enabled = False
-            RbName.Enabled = False
-            RbNumber.Enabled = False
+
         End If
 
     End Sub

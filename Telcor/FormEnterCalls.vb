@@ -9,11 +9,15 @@ Public Class FormEnterCalls
     ''' <param name="e"></param>
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         Customer.FindCustomer(Telcor.customers, CmbCustomer.SelectedText, True)
-        Dim newCall As New TTCall(CmbCallType.SelectedItem, NupDuration.Value, txtNumberCalled.Text)
-        Dim index As Integer = CmbCustomer.SelectedIndex
-        Telcor.customers(index).TelcorCall.Add(newCall)
-        Telcor.customers(index).CustCallCount += 1
-        BtnClear.PerformClick()
+        If IsNumeric(txtNumberCalled.Text) Then
+            Dim newCall As New TTCall(CmbCallType.SelectedItem, NupDuration.Value, txtNumberCalled.Text)
+            Dim index As Integer = CmbCustomer.SelectedIndex
+            Telcor.customers(index).TelcorCall.Add(newCall)
+            Telcor.customers(index).CustCallCount += 1
+            BtnClear.PerformClick()
+        Else
+            MsgBox("Please enter a valid phone number")
+        End If
     End Sub
 
     ''' <summary>
@@ -25,6 +29,12 @@ Public Class FormEnterCalls
         For Each person In Telcor.customers
             CmbCustomer.Items.Add(person.CustName)
         Next
+
+        If CmbCustomer.Items.Count <= 0 Then
+            CmbCustomer.Items.Add("Please Load customers")
+            BtnSave.Enabled = False
+        End If
+        CmbCustomer.SelectedIndex = 0
 
         CmbCallType.DataSource = [Enum].GetValues(GetType(TTCall.CallType))
 
@@ -45,8 +55,8 @@ Public Class FormEnterCalls
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub BtnClear_Click(sender As Object, e As EventArgs) Handles BtnClear.Click
-        CmbCustomer.SelectedIndex = -1
-        CmbCallType.SelectedIndex = -1
+        CmbCustomer.SelectedIndex = 0
+        CmbCallType.SelectedIndex = 0
         NupDuration.Value = 0
         txtNumberCalled.Clear()
     End Sub

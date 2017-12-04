@@ -102,6 +102,7 @@ Partial Class FormViewCustomersCalls
         '
         'BtnSearch
         '
+        Me.BtnSearch.Enabled = False
         Me.BtnSearch.Location = New System.Drawing.Point(381, 12)
         Me.BtnSearch.Name = "BtnSearch"
         Me.BtnSearch.Size = New System.Drawing.Size(56, 20)

@@ -36,4 +36,9 @@ Public Class FormAddCustomer
     Private Sub BtnClose_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
+
+    Private Sub txtPhoneNumber_Click(sender As Object, e As EventArgs) Handles txtPhoneNumber.Click
+        txtPhoneNumber.Select(0, 0)
+
+    End Sub
 End Class

@@ -18,22 +18,18 @@ Public Class FormCallCost
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub BtnCalculate_Click(sender As Object, e As EventArgs) Handles BtnCalculate.Click
-        If IsNumeric(TxtDuration.Text) Then
-            Dim calculatedCost As String
-            Dim cost As Decimal = TTCall.CalculateCost(CmbCallType.SelectedItem, Integer.Parse(TxtDuration.Text))
-            Dim callLength As Integer = CInt(TxtDuration.Text)
-            Dim duration As String = TTCall.Format(callLength, 1)
-            Dim callType As String = CmbCallType.SelectedValue.ToString
+        Dim calculatedCost As String
+        Dim cost As Decimal = TTCall.CalculateCost(CmbCallType.SelectedItem, NupDuration.Value)
+        Dim callLength As Integer = NupDuration.Value
+        Dim duration As String = TTCall.Format(callLength, 1)
+        Dim callType As String = CmbCallType.SelectedValue.ToString
 
-            calculatedCost = String.Format("Call Duration [in seconds] : {0}" & vbCr &
+        calculatedCost = String.Format("Call Duration [in seconds] : {0}" & vbCr &
             "Call Type : {1} " & vbCr &
             "A  {2}" & vbCr &
-            "{3} costs {4}", TxtDuration.Text, callType, duration, callType, cost)
-            RtbResponse.Text = calculatedCost
-        Else
-            MsgBox("Please enter a number")
-            TxtDuration.Focus()
-        End If
+            "{3} costs {4}", NupDuration.Text, callType, duration, callType, cost)
+        RtbResponse.Text = calculatedCost
+
 
     End Sub
 
@@ -44,7 +40,7 @@ Public Class FormCallCost
     ''' <param name="e"></param>
     Private Sub BtnClear_Click(sender As Object, e As EventArgs) Handles BtnClear.Click
         CmbCallType.SelectedIndex = 0
-        TxtDuration.Text = ""
+        NupDuration.Value = 0
         RtbResponse.Text = ""
     End Sub
 

@@ -36,7 +36,7 @@ Public Class FormEnterCalls
         End If
         CmbCustomer.SelectedIndex = 0
 
-        CmbCallType.DataSource = [Enum].GetValues(GetType(TTCall.CallType))
+        CmbCallType.DataSource = [Enum].GetValues(GetType(TTCall._CallType))
 
     End Sub
 

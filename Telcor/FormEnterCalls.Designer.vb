@@ -100,7 +100,7 @@ Partial Class FormEnterCalls
         '
         Me.NupDuration.Location = New System.Drawing.Point(11, 122)
         Me.NupDuration.Margin = New System.Windows.Forms.Padding(2, 2, 2, 10)
-        Me.NupDuration.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.NupDuration.Maximum = New Decimal(New Integer() {3600, 0, 0, 0})
         Me.NupDuration.Name = "NupDuration"
         Me.NupDuration.Size = New System.Drawing.Size(168, 20)
         Me.NupDuration.TabIndex = 2

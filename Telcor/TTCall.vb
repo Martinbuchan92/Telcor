@@ -3,7 +3,7 @@
 ''' </summary>
 Public Class TTCall
     '''
-    Enum CallType
+    Enum _CallType
         LOCAL_CALL
         NAT_CALL
         ISD_CALL
@@ -13,12 +13,12 @@ Public Class TTCall
 
     Dim callDescriptions() As String = {"Local Call", "National Call", "International Call", "Mobile Call", "Default Call"}
 
-    Private ReadOnly callID As Integer
-    Private thisCallType As CallType
-    Private duration As Integer
-    Private numberCalled As String
-    Private ReadOnly Cost As Double
-    Private Shared nextCallID As Integer = 1
+    Private ReadOnly _callID As Integer
+    Private _thisCallType As CallType
+    Private _duration As Integer
+    Private _numberCalled As String
+    Private ReadOnly _Cost As Double
+    Private Shared _nextCallID As Integer = 1
     Const SHORT_TIME = 0
     Const LONG_Time = 1
 
@@ -29,12 +29,12 @@ Public Class TTCall
     ''' <param name="c_duration">Duration of the call being documented to be used in other methods for calculations</param>
     ''' <param name="c_numberCalled">The phone number the customer called for documentation</param>
     Public Sub New(ByVal ct As CallType, ByVal c_duration As Integer, ByVal c_numberCalled As String)
-        thisCallType = ct
-        duration = c_duration
-        numberCalled = c_numberCalled
-        callID = nextCallID ' get next call ID
-        nextCallID += 1
-        Cost = CalculateCost(thisCallType, duration)
+        CallType = ct
+        Duration = c_duration
+        NumberCalled = c_numberCalled
+        _callID = _nextCallID ' get next call ID
+        _nextCallID += 1
+        _Cost = CalculateCost(_thisCallType, _duration)
     End Sub
 
     ''' <summary>
@@ -52,13 +52,13 @@ Public Class TTCall
         Dim calcCost As Double
 
         Select Case ct
-            Case CallType.LOCAL_CALL
+            Case _CallType.LOCAL_CALL
                 calcCost = (duration * LOCAL_RATE)
-            Case CallType.NAT_CALL
+            Case _CallType.NAT_CALL
                 calcCost = (duration * NAT_RATE)
-            Case CallType.ISD_CALL
+            Case _CallType.ISD_CALL
                 calcCost = (duration * ISD_RATE)
-            Case CallType.MOBILE_CALL
+            Case _CallType.MOBILE_CALL
                 calcCost = (duration * MOBILE_RATE)
             Case Else
                 calcCost = (duration * DEFAULT_RATE)
@@ -94,21 +94,21 @@ Public Class TTCall
     ''' </summary>
     ''' <returns>The Call instance data as a string</returns>
     Public Overrides Function ToString() As String
-        Dim objectData = String.Format("{0}, {1}, {2}, {3}", numberCalled, thisCallType, Format(duration, 0), (FormatCurrency(CDbl(Cost), 2)))
+        Dim objectData = String.Format("{0}, {1}, {2}, {3}", _numberCalled, _thisCallType, Format(_duration, 0), (FormatCurrency(CDbl(_Cost), 2)))
         Return objectData
     End Function
 
 #Region "properties"
-    Public ReadOnly Property PropCallID() As Integer
+    Public ReadOnly Property CallID() As Integer
         Get
-            Return callID
+            Return _callID
         End Get
 
     End Property
 
-    Public Property PropCallType() As CallType
+    Public Property CallType() As CallType
         Get
-            Return thisCallType
+            Return _thisCallType
         End Get
         Set(ByVal value As CallType)
             Dim ctArray As Array
@@ -117,36 +117,41 @@ Public Class TTCall
             Dim item As CallType
             For Each item In ctArray
                 If value = item Then
-                    thisCallType = item
+                    _thisCallType = item
                 Else
-                    thisCallType = CallType.DEFAULT_CALL
+                    _thisCallType = _CallType.DEFAULT_CALL
                 End If
             Next
 
         End Set
     End Property
 
-    Public Property PropDuration() As Integer
+    Public Property Duration() As Integer
         Get
-            Return duration
+            Return _duration
         End Get
         Set(value As Integer)
-            duration = value
+            If value >= 0 Then
+                _duration = value
+            Else
+                _duration = 0
+            End If
+
         End Set
     End Property
 
-    Public Property PropNumberCalled() As String
+    Public Property NumberCalled() As String
         Get
-            Return numberCalled
+            Return _numberCalled
         End Get
         Set(value As String)
-            numberCalled = value
+            _numberCalled = value
         End Set
     End Property
 
-    Public ReadOnly Property PropCost() As Double
+    Public ReadOnly Property Cost() As Double
         Get
-            Return Cost
+            Return _Cost
         End Get
     End Property
 #End Region

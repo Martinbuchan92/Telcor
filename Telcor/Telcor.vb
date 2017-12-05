@@ -9,12 +9,7 @@ Module Telcor
     ''' Separates from ShowMenu as per assignment specs
     ''' </summary>
     Sub Main()
-        Try
-            ShowMenu()
-        Catch ex As Exception
-            MsgBox("There was an unknown exception, restarting program")
-            ShowMenu()
-        End Try
+        ShowMenu()
     End Sub
 
     ''' <summary>

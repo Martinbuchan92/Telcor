@@ -106,7 +106,7 @@ Partial Class FormCallCost
         'NupDuration
         '
         Me.NupDuration.Location = New System.Drawing.Point(150, 27)
-        Me.NupDuration.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.NupDuration.Maximum = New Decimal(New Integer() {3600, 0, 0, 0})
         Me.NupDuration.Name = "NupDuration"
         Me.NupDuration.Size = New System.Drawing.Size(120, 20)
         Me.NupDuration.TabIndex = 5

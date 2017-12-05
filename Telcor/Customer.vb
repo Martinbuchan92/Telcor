@@ -22,7 +22,7 @@ Public Class Customer
     ''' </summary>
     ''' <returns>String containing the customers details</returns>
     Public Overrides Function ToString() As String
-        Dim objectData = String.Format("{0}, '{1}'", callerID, customerName)
+        Dim objectData = String.Format("{0}, {1}", callerID, customerName)
         Return objectData
     End Function
 

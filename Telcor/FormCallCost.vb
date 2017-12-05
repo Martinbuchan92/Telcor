@@ -9,7 +9,7 @@ Public Class FormCallCost
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub FormCallCost_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CmbCallType.DataSource = [Enum].GetValues(GetType(TTCall.CallType))
+        CmbCallType.DataSource = [Enum].GetValues(GetType(TTCall._CallType))
     End Sub
 
     ''' <summary>
@@ -27,7 +27,7 @@ Public Class FormCallCost
         calculatedCost = String.Format("Call Duration [in seconds] : {0}" & vbCr &
             "Call Type : {1} " & vbCr &
             "A  {2}" & vbCr &
-            "{3} costs {4}", NupDuration.Text, callType, duration, callType, cost)
+            "{3} costs {4}", NupDuration.Value, callType, duration, callType, cost)
         RtbResponse.Text = calculatedCost
 
 

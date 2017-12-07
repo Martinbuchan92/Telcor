@@ -13,7 +13,7 @@ Public Class FormAddCustomer
             Dim custName = txtName.Text
 
             Dim customer As New Customer(number, custName)
-            Telcor.customers.Add(customer)
+            Telcor.GetCustomerList.Add(customer)
         End If
         BtnClear.PerformClick()
     End Sub

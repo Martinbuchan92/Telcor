@@ -3,7 +3,7 @@
 ''' conducts IO for the program and holds the main method and customer data arraylist
 ''' </summary>
 Module Telcor
-    Public customers As New List(Of Customer)
+    Private customers As New List(Of Customer)
 
     ''' <summary>
     ''' Separates from ShowMenu as per assignment specs
@@ -19,6 +19,9 @@ Module Telcor
         FormTelcorMenu.ShowDialog()
     End Sub
 
+    Public Function GetCustomerList() As List(Of Customer)
+        Return customers
+    End Function
     ''' <summary>
     ''' Loads the customer information into an arraylist so it can be manipulated.
     ''' If the customer.txt file can not be found in the default folder the user is prompted to select one.
@@ -41,6 +44,7 @@ Module Telcor
                 Dim columns() As String = row.Split(", ")
                 columns(1) = columns(1).Replace(" '", "")
                 columns(1) = columns(1).Replace("'", "")
+                columns(1) = columns(1).Trim
                 Dim customer As New Customer(columns(0), columns(1))
                 customers.Add(customer)
             Loop

@@ -8,12 +8,13 @@ Public Class FormEnterCalls
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-        Customer.FindCustomer(Telcor.customers, CmbCustomer.SelectedText, True)
+        Customer.FindCustomer(Telcor.GetCustomerList, CmbCustomer.SelectedText, True)
         If IsNumeric(txtNumberCalled.Text) Then
+            MsgBox(CmbCallType.SelectedItem.ToString)
             Dim newCall As New TTCall(CmbCallType.SelectedItem, NupDuration.Value, txtNumberCalled.Text)
             Dim index As Integer = CmbCustomer.SelectedIndex
-            Telcor.customers(index).TelcorCall.Add(newCall)
-            Telcor.customers(index).CustCallCount += 1
+            Telcor.GetCustomerList(index).TelcorCall.Add(newCall)
+            Telcor.GetCustomerList(index).CustCallCount += 1
             BtnClear.PerformClick()
         Else
             MsgBox("Please enter a valid phone number without spaces")
@@ -26,7 +27,7 @@ Public Class FormEnterCalls
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub FormEnterCalls_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        For Each person In Telcor.customers
+        For Each person In Telcor.GetCustomerList
             CmbCustomer.Items.Add(person.CustName)
         Next
 

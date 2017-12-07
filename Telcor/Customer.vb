@@ -69,12 +69,12 @@ Public Class Customer
         Dim found As Boolean = False
         For Each person In customers
             If byName = True Then
-                If person.CustName.Equals(search) Then
+                If person.CustName.ToUpper.Trim.Equals(search.ToUpper) Then
                     found = True
                     details = PrintDetails(person, True)
                 End If
             Else 'searching by ID
-                If person.CustCallerID.Equals(search) Then
+                If person.CustCallerID.Replace(" ", "").Equals(search.Replace(" ", "")) Then
                     found = True
                     details = PrintDetails(person, True)
                 End If

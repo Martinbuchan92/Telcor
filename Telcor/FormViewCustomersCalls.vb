@@ -26,22 +26,22 @@ Public Class FormViewCustomersCalls
         RbNumber.Enabled = False
         BtnSearch.Enabled = False
         If CmbSelectOption.SelectedIndex = 0 Then
-            results = Customer.Format(customers, True, True)
+            results = Customer.Format(Telcor.GetCustomerList, True, True)
             RtbResultsBox.Text += results
 
             'List all with call details
         ElseIf CmbSelectOption.SelectedIndex = 1 Then
-            results = Customer.Format(customers, True, False)
+            results = Customer.Format(Telcor.GetCustomerList, True, False)
             RtbResultsBox.Text = results
 
             'List all not contacted
         ElseIf CmbSelectOption.SelectedIndex = 2 Then
-            results = Customer.Format(customers, False, True)
+            results = Customer.Format(Telcor.GetCustomerList, False, True)
             RtbResultsBox.Text = results
 
             'List all contacted
         ElseIf CmbSelectOption.SelectedIndex = 3 Then
-            results = Customer.Format(customers, False, False)
+            results = Customer.Format(Telcor.GetCustomerList, False, False)
             RtbResultsBox.Text = results
 
             'Search
@@ -62,11 +62,10 @@ Public Class FormViewCustomersCalls
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub BtnSearch_Click(sender As Object, e As EventArgs) Handles BtnSearch.Click
-
         If RbName.Checked Then
-            RtbResultsBox.Text = Customer.FindCustomer(customers, TxtSearchBox.Text, True)
+            RtbResultsBox.Text = Customer.FindCustomer(Telcor.GetCustomerList, TxtSearchBox.Text, True)
         Else
-            RtbResultsBox.Text = Customer.FindCustomer(customers, TxtSearchBox.Text, False)
+            RtbResultsBox.Text = Customer.FindCustomer(Telcor.GetCustomerList, TxtSearchBox.Text, False)
         End If
     End Sub
 End Class

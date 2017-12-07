@@ -94,7 +94,7 @@ Public Class TTCall
     ''' </summary>
     ''' <returns>The Call instance data as a string</returns>
     Public Overrides Function ToString() As String
-        Dim objectData = String.Format("{0}, {1}, {2}, {3}", _numberCalled, _thisCallType, Format(_duration, 0), (FormatCurrency(CDbl(_Cost), 2)))
+        Dim objectData = String.Format("{0}, {1}, {2}, {3}", _numberCalled, callDescriptions(_thisCallType), Format(_duration, 0), (FormatCurrency(CDbl(_Cost), 2)))
         Return objectData
     End Function
 
@@ -108,21 +108,10 @@ Public Class TTCall
 
     Public Property CallType() As CallType
         Get
-            Return _thisCallType
+            Return callDescriptions(_thisCallType)
         End Get
         Set(ByVal value As CallType)
-            Dim ctArray As Array
-            ctArray = System.Enum.GetValues(GetType(CallType))
-
-            Dim item As CallType
-            For Each item In ctArray
-                If value = item Then
-                    _thisCallType = item
-                Else
-                    _thisCallType = _CallType.DEFAULT_CALL
-                End If
-            Next
-
+            _thisCallType = value
         End Set
     End Property
 

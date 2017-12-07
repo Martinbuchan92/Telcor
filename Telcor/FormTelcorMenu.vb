@@ -85,7 +85,7 @@ Public Class FormTelcorMenu
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
-        If (Telcor.customers.Count > 0) Then
+        If (Telcor.GetCustomerList.Count > 0) Then
             Telcor.SaveFileData(0)
             Telcor.SaveFileData(1)
         End If

@@ -94,7 +94,7 @@ Public Class TTCall
     ''' </summary>
     ''' <returns>The Call instance data as a string</returns>
     Public Overrides Function ToString() As String
-        Dim objectData = String.Format("{0}, {1}, {2}, {3}", _numberCalled, callDescriptions(_thisCallType), Format(_duration, 0), (FormatCurrency(CDbl(_Cost), 2)))
+        Dim objectData = String.Format("{0}, {1}, {2}, {3}", NumberCalled, callDescriptions(_thisCallType), Format(_duration, 0), (FormatCurrency(CDbl(_Cost), 2)))
         Return objectData
     End Function
 

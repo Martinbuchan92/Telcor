@@ -13,9 +13,12 @@ Public Class SortCustomersName
     ''' <param name="y">second customer</param>
     ''' <returns></returns>
     Public Function Compare(x As Customer, y As Customer) As Integer Implements IComparer(Of Customer).Compare
-        If (x.CustName > y.CustName) Then
+        Dim xcustomer = x.CustName.ToUpper
+        Dim ycustomer = y.CustName.ToUpper
+
+        If (xcustomer > ycustomer) Then
             Return 1
-        ElseIf (x.CustName < y.CustName) Then
+        ElseIf (xcustomer < ycustomer) Then
             Return -1
         Else
             Return 0

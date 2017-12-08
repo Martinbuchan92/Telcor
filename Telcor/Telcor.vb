@@ -19,6 +19,10 @@ Module Telcor
         FormTelcorMenu.ShowDialog()
     End Sub
 
+    ''' <summary>
+    ''' Returns the list of customers so that it can be private 
+    ''' </summary>
+    ''' <returns>List of customers</returns>
     Public Function GetCustomerList() As List(Of Customer)
         Return customers
     End Function
